@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
 @interface ViewController : UIViewController
 

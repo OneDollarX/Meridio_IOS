@@ -17,6 +17,7 @@
 		1B3DA8C51F15515D005E825A /* SocialLoginUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3DA8C41F15515D005E825A /* SocialLoginUITests.m */; };
 		1B3DA8D31F1551AF005E825A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3DA8D21F1551AF005E825A /* FBSDKLoginKit.framework */; };
 		1B3DAA241F155460005E825A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3DA8E21F155441005E825A /* FBSDKCoreKit.framework */; };
+		1BD6840E1F1C3D650061E6A5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3DA8E61F155441005E825A /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -371,6 +372,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD6840E1F1C3D650061E6A5 /* FBSDKShareKit.framework in Frameworks */,
 				1B3DAA241F155460005E825A /* FBSDKCoreKit.framework in Frameworks */,
 				1B3DA8D31F1551AF005E825A /* FBSDKLoginKit.framework in Frameworks */,
 			);
