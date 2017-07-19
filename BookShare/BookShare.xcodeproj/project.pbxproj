@@ -13,6 +13,8 @@
 		1B3610B51F1FE9AF0017A077 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3610B41F1FE9AF0017A077 /* ScanViewController.m */; };
 		1B3610B81F1FF15E0017A077 /* BookDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3610B71F1FF15E0017A077 /* BookDetailsViewController.m */; };
 		1B3610BB1F1FFD140017A077 /* ISBNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3610BA1F1FFD140017A077 /* ISBNViewController.m */; };
+		1B6CD4EE1F20177300ED064D /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4ED1F20177300ED064D /* LibraryViewController.m */; };
+		1B6CD4F01F201B4E00ED064D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6CD4EF1F201B4E00ED064D /* CoreLocation.framework */; };
 		1B7D44A41F1E6E500015EE1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44A31F1E6E500015EE1B /* main.m */; };
 		1B7D44A71F1E6E500015EE1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44A61F1E6E500015EE1B /* AppDelegate.m */; };
 		1B7D44AA1F1E6E500015EE1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44A91F1E6E500015EE1B /* ViewController.m */; };
@@ -54,6 +56,9 @@
 		1B3610B71F1FF15E0017A077 /* BookDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailsViewController.m; sourceTree = "<group>"; };
 		1B3610B91F1FFD140017A077 /* ISBNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISBNViewController.h; sourceTree = "<group>"; };
 		1B3610BA1F1FFD140017A077 /* ISBNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISBNViewController.m; sourceTree = "<group>"; };
+		1B6CD4EC1F20177300ED064D /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
+		1B6CD4ED1F20177300ED064D /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
+		1B6CD4EF1F201B4E00ED064D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1B7D449F1F1E6E500015EE1B /* BookShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7D44A31F1E6E500015EE1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B7D44A51F1E6E500015EE1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B6CD4F01F201B4E00ED064D /* CoreLocation.framework in Frameworks */,
 				1B3610B21F1E9BA60017A077 /* FBSDKCoreKit.framework in Frameworks */,
 				1B3610B01F1E9AFD0017A077 /* FBSDKLoginKit.framework in Frameworks */,
 			);
@@ -104,6 +110,7 @@
 		1B3610A81F1E99C20017A077 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B6CD4EF1F201B4E00ED064D /* CoreLocation.framework */,
 				1B3610A91F1E99C20017A077 /* FBSDKCoreKit.framework */,
 				1B3610AA1F1E99C20017A077 /* FBSDKLoginKit.framework */,
 				1B3610AB1F1E99C20017A077 /* FBSDKShareKit.framework */,
@@ -147,6 +154,8 @@
 				1B7D44AB1F1E6E500015EE1B /* Main.storyboard */,
 				1B7D44A51F1E6E500015EE1B /* AppDelegate.h */,
 				1B7D44A61F1E6E500015EE1B /* AppDelegate.m */,
+				1B6CD4EC1F20177300ED064D /* LibraryViewController.h */,
+				1B6CD4ED1F20177300ED064D /* LibraryViewController.m */,
 				1B3610B91F1FFD140017A077 /* ISBNViewController.h */,
 				1B3610BA1F1FFD140017A077 /* ISBNViewController.m */,
 				1B3610B61F1FF15E0017A077 /* BookDetailsViewController.h */,
@@ -164,8 +173,7 @@
 				1B7D44B31F1E6E500015EE1B /* Info.plist */,
 				1B7D44A21F1E6E500015EE1B /* Supporting Files */,
 			);
-			name = BookShare;
-			path = Setting;
+			path = BookShare;
 			sourceTree = "<group>";
 		};
 		1B7D44A21F1E6E500015EE1B /* Supporting Files */ = {
@@ -333,6 +341,7 @@
 				1B3610B81F1FF15E0017A077 /* BookDetailsViewController.m in Sources */,
 				1B7D44AA1F1E6E500015EE1B /* ViewController.m in Sources */,
 				1B3610BB1F1FFD140017A077 /* ISBNViewController.m in Sources */,
+				1B6CD4EE1F20177300ED064D /* LibraryViewController.m in Sources */,
 				1B3610B51F1FE9AF0017A077 /* ScanViewController.m in Sources */,
 				1B7D44A71F1E6E500015EE1B /* AppDelegate.m in Sources */,
 				1B7D44D71F1E73560015EE1B /* settingTableViewCell.m in Sources */,
@@ -491,10 +500,10 @@
 				DEVELOPMENT_TEAM = 9VUC3R8D65;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Setting",
+					"$(PROJECT_DIR)/BookShare",
 					"~/Documents/SDKs/FacebookSDKs-IOS-4",
 				);
-				INFOPLIST_FILE = Setting/Info.plist;
+				INFOPLIST_FILE = BookShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.BookShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,10 +517,10 @@
 				DEVELOPMENT_TEAM = 9VUC3R8D65;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Setting",
+					"$(PROJECT_DIR)/BookShare",
 					"~/Documents/SDKs/FacebookSDKs-IOS-4",
 				);
-				INFOPLIST_FILE = Setting/Info.plist;
+				INFOPLIST_FILE = BookShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.BookShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";

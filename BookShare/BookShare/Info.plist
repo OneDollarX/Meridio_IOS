@@ -70,5 +70,11 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Always to show current user&apos;s location</string>
+	<key>NSLocationUsageDescription</key>
+	<string>To show current user&apos;s location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Only show current user&apos;s location in use</string>
 </dict>
 </plist>

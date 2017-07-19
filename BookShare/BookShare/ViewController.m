@@ -8,9 +8,15 @@
 
 #import "ViewController.h"
 #import "settingTableViewCell.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "LibraryViewController.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource> {
     NSArray *settingArray;
+
+    
+    
 }
 
 @end
@@ -19,8 +25,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
     //show username in the setting
+    
     self.info.text = _username;
+    
   
     //hide back button
     self.navigationItem.hidesBackButton = YES;
@@ -63,7 +75,28 @@
         self.tableView.hidden = NO;
     }else{
         self.tableView.hidden = YES;
+        
     }
+}
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+    int row = (int) [myIndexPath row];
+
+    
+    if([[segue identifier] isEqualToString:@"showLibraryFromMainPage"] && row == 1){
+        LibraryViewController *libraryView = [segue destinationViewController];
+
+    }
+    
+    
+    
 }
 
 
