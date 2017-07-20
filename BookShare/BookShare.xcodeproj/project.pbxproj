@@ -16,6 +16,8 @@
 		1B6CD4F01F201B4E00ED064D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6CD4EF1F201B4E00ED064D /* CoreLocation.framework */; };
 		1B6CD4F31F2029AC00ED064D /* LibraryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4F21F2029AC00ED064D /* LibraryTableViewController.m */; };
 		1B6CD4F61F202C4D00ED064D /* LibraryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4F51F202C4D00ED064D /* LibraryTableViewCell.m */; };
+		1B6CD4F91F20403900ED064D /* MyRequestsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4F81F20403900ED064D /* MyRequestsTableViewCell.m */; };
+		1B6CD4FC1F2040E900ED064D /* MyRequestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4FB1F2040E900ED064D /* MyRequestsTableViewController.m */; };
 		1B7D44A41F1E6E500015EE1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44A31F1E6E500015EE1B /* main.m */; };
 		1B7D44A71F1E6E500015EE1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44A61F1E6E500015EE1B /* AppDelegate.m */; };
 		1B7D44AA1F1E6E500015EE1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44A91F1E6E500015EE1B /* ViewController.m */; };
@@ -24,7 +26,6 @@
 		1B7D44B21F1E6E500015EE1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7D44B01F1E6E500015EE1B /* LaunchScreen.storyboard */; };
 		1B7D44BD1F1E6E500015EE1B /* SettingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44BC1F1E6E500015EE1B /* SettingTests.m */; };
 		1B7D44C81F1E6E500015EE1B /* SettingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44C71F1E6E500015EE1B /* SettingUITests.m */; };
-		1B7D44D71F1E73560015EE1B /* settingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44D61F1E73560015EE1B /* settingTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,10 @@
 		1B6CD4F21F2029AC00ED064D /* LibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryTableViewController.m; sourceTree = "<group>"; };
 		1B6CD4F41F202C4D00ED064D /* LibraryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryTableViewCell.h; sourceTree = "<group>"; };
 		1B6CD4F51F202C4D00ED064D /* LibraryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryTableViewCell.m; sourceTree = "<group>"; };
+		1B6CD4F71F20403900ED064D /* MyRequestsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRequestsTableViewCell.h; sourceTree = "<group>"; };
+		1B6CD4F81F20403900ED064D /* MyRequestsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRequestsTableViewCell.m; sourceTree = "<group>"; };
+		1B6CD4FA1F2040E900ED064D /* MyRequestsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRequestsTableViewController.h; sourceTree = "<group>"; };
+		1B6CD4FB1F2040E900ED064D /* MyRequestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRequestsTableViewController.m; sourceTree = "<group>"; };
 		1B7D449F1F1E6E500015EE1B /* BookShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7D44A31F1E6E500015EE1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B7D44A51F1E6E500015EE1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,8 +83,6 @@
 		1B7D44C31F1E6E500015EE1B /* BookShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookShareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7D44C71F1E6E500015EE1B /* SettingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingUITests.m; sourceTree = "<group>"; };
 		1B7D44C91F1E6E500015EE1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B7D44D51F1E73560015EE1B /* settingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingTableViewCell.h; sourceTree = "<group>"; };
-		1B7D44D61F1E73560015EE1B /* settingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,10 @@
 				1B7D44AB1F1E6E500015EE1B /* Main.storyboard */,
 				1B7D44A51F1E6E500015EE1B /* AppDelegate.h */,
 				1B7D44A61F1E6E500015EE1B /* AppDelegate.m */,
+				1B6CD4FA1F2040E900ED064D /* MyRequestsTableViewController.h */,
+				1B6CD4FB1F2040E900ED064D /* MyRequestsTableViewController.m */,
+				1B6CD4F71F20403900ED064D /* MyRequestsTableViewCell.h */,
+				1B6CD4F81F20403900ED064D /* MyRequestsTableViewCell.m */,
 				1B6CD4F41F202C4D00ED064D /* LibraryTableViewCell.h */,
 				1B6CD4F51F202C4D00ED064D /* LibraryTableViewCell.m */,
 				1B6CD4F11F2029AC00ED064D /* LibraryTableViewController.h */,
@@ -169,8 +176,6 @@
 				1B3610B41F1FE9AF0017A077 /* ScanViewController.m */,
 				1B3610A51F1E998E0017A077 /* LoginViewController.h */,
 				1B3610A61F1E998E0017A077 /* LoginViewController.m */,
-				1B7D44D51F1E73560015EE1B /* settingTableViewCell.h */,
-				1B7D44D61F1E73560015EE1B /* settingTableViewCell.m */,
 				1B7D44A81F1E6E500015EE1B /* ViewController.h */,
 				1B7D44A91F1E6E500015EE1B /* ViewController.m */,
 				1B7D44AE1F1E6E500015EE1B /* Assets.xcassets */,
@@ -344,15 +349,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3610B81F1FF15E0017A077 /* BookDetailsViewController.m in Sources */,
+				1B6CD4F91F20403900ED064D /* MyRequestsTableViewCell.m in Sources */,
 				1B7D44AA1F1E6E500015EE1B /* ViewController.m in Sources */,
 				1B3610BB1F1FFD140017A077 /* ISBNViewController.m in Sources */,
 				1B6CD4F61F202C4D00ED064D /* LibraryTableViewCell.m in Sources */,
 				1B3610B51F1FE9AF0017A077 /* ScanViewController.m in Sources */,
 				1B7D44A71F1E6E500015EE1B /* AppDelegate.m in Sources */,
-				1B7D44D71F1E73560015EE1B /* settingTableViewCell.m in Sources */,
 				1B6CD4F31F2029AC00ED064D /* LibraryTableViewController.m in Sources */,
 				1B7D44A41F1E6E500015EE1B /* main.m in Sources */,
 				1B3610A71F1E998E0017A077 /* LoginViewController.m in Sources */,
+				1B6CD4FC1F2040E900ED064D /* MyRequestsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

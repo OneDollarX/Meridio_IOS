@@ -1,5 +1,5 @@
 //
-//  LibraryTableViewController.h
+//  MyRequestsTableViewController.h
 //  BookShare
 //
 //  Created by YILUN XU on 7/19/17.
@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LibraryTableViewController : UITableViewController {
+@interface MyRequestsTableViewController : UITableViewController{
+    
     NSMutableArray *title;
-    NSMutableArray *categories;
+    NSMutableArray *user;
+    NSMutableArray *status;
     NSMutableArray *imageURL;
 }
+
+
+
 
 @end

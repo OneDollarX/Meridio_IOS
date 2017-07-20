@@ -1,19 +1,18 @@
 //
-//  settingTableViewCell.m
-//  Setting
+//  MyRequestsTableViewCell.m
+//  BookShare
 //
-//  Created by YILUN XU on 7/18/17.
+//  Created by YILUN XU on 7/19/17.
 //  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
 //
 
-#import "settingTableViewCell.h"
+#import "MyRequestsTableViewCell.h"
 
-@implementation settingTableViewCell
+@implementation MyRequestsTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

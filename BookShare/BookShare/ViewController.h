@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "settingTableViewCell.h"
 
 @interface ViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *info;
 
 
 @property (nonatomic) NSString *username;
@@ -19,7 +17,7 @@
 @property (nonatomic) NSString *emailAddress;
 
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingBtn;
 - (IBAction)SettingClicked:(id)sender;
