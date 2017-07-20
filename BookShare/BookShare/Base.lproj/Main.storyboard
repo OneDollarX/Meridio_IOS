@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ssu-js-Rwu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WBO-z2-qsK">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -67,7 +67,7 @@
                                         <color key="backgroundColor" red="0.33590328580670853" green="0.33922906091370564" blue="0.33922906091370564" alpha="0.9474796660958904" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="cellTitle" destination="WKM-Uu-NII" id="aw4-wk-rTo"/>
-                                            <segue destination="bWb-Qd-kFO" kind="show" identifier="showLibraryFromMainPage" id="SRj-KT-g6g"/>
+                                            <segue destination="WBO-z2-qsK" kind="show" identifier="showLibraryFromMainPage" id="WfZ-xe-LzW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -189,29 +189,80 @@
             <point key="canvasLocation" x="2446.875" y="-1618.3098591549297"/>
         </scene>
         <!--Library-->
-        <scene sceneID="sUK-Fc-Yjm">
+        <scene sceneID="NRh-5P-nG7">
             <objects>
-                <viewController id="bWb-Qd-kFO" customClass="LibraryViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="G6d-IZ-o3T"/>
-                        <viewControllerLayoutGuide type="bottom" id="TrN-kQ-EkD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iWl-Ig-YUh">
+                <tableViewController id="5Vh-jR-i66" customClass="LibraryTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" id="62a-XC-a9u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Library" id="0cc-LW-fdS">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="VBa-wD-dLb">
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="libraryCell" rowHeight="91" id="obQ-pN-TeS" customClass="LibraryTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="320" height="91"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="obQ-pN-TeS" id="t0i-a2-U3F">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-z5-Nds">
+                                            <rect key="frame" x="8" y="8" width="61" height="71"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ8-dN-ncG">
+                                            <rect key="frame" x="77" y="4" width="235" height="53"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh4-MJ-cHr">
+                                            <rect key="frame" x="77" y="51" width="235" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookLibraryCategories" destination="eh4-MJ-cHr" id="k58-hW-sCy"/>
+                                    <outlet property="bookLibraryImageView" destination="bjC-z5-Nds" id="b0m-10-HAM"/>
+                                    <outlet property="bookLibraryTitle" destination="WZ8-dN-ncG" id="kSB-CE-Se6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5Vh-jR-i66" id="e1m-ro-exQ"/>
+                            <outlet property="delegate" destination="5Vh-jR-i66" id="K3U-Wg-hlG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Library" id="Ngh-07-bFG">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Krq-1s-YmF">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="fMD-rF-nSg"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="oJm-jh-o3s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mLM-aI-QzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ErD-Sz-Wyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1115.625" y="-1016.1971830985916"/>
+            <point key="canvasLocation" x="-755.625" y="-1101.7605633802816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eJW-gV-aXI">
+            <objects>
+                <navigationController id="WBO-z2-qsK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DAR-Nc-adF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5Vh-jR-i66" kind="relationship" relationship="rootViewController" id="CUq-A6-eST"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3Y-NP-GUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1768" y="-1101"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JDj-il-cEV">
@@ -459,7 +510,7 @@
                     <navigationItem key="navigationItem" title="Book Details" id="aoL-oh-IZz">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="1Mr-n6-8gz">
                             <connections>
-                                <segue destination="05e-RQ-Hy5" kind="show" id="y61-4T-V2B"/>
+                                <segue destination="05e-RQ-Hy5" kind="show" identifier="backToScan" id="y61-4T-V2B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -469,7 +520,7 @@
                         <outlet property="bookImageView" destination="4nD-MZ-cTF" id="GGv-8q-Qwh"/>
                         <outlet property="bookTitleLabel" destination="Vz0-nX-WMH" id="zm6-DR-o9M"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="PostSuccessOK" id="GvV-Ne-l98"/>
-                        <segue destination="bWb-Qd-kFO" kind="show" identifier="PostSuccessLibrary" id="IAz-ZI-w25"/>
+                        <segue destination="5Vh-jR-i66" kind="show" identifier="PostSuccessLibrary" id="05p-Ug-APB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9K-ga-OYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -512,24 +563,6 @@
             </objects>
             <point key="canvasLocation" x="4507.5" y="-813.38028169014081"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lXv-lj-2aq">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SCJ-IW-fzh" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lBB-yD-w4R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bWb-Qd-kFO" kind="relationship" relationship="rootViewController" id="tue-Bl-LDQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hh6-9F-3f0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2113.125" y="-1016.1971830985916"/>
-        </scene>
     </scenes>
     <resources>
         <image name="SettingIcon" width="30" height="30"/>
@@ -543,7 +576,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="y61-4T-V2B"/>
         <segue reference="G0s-4b-g9h"/>
-        <segue reference="IAz-ZI-w25"/>
-        <segue reference="z0C-aA-nY4"/>
+        <segue reference="oJm-jh-o3s"/>
+        <segue reference="CUq-A6-eST"/>
     </inferredMetricsTieBreakers>
 </document>

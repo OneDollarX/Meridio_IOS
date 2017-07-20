@@ -10,7 +10,7 @@
 #import "settingTableViewCell.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import "LibraryViewController.h"
+#import "LibraryTableViewController.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource> {
     NSArray *settingArray;
@@ -91,7 +91,7 @@
 
     
     if([[segue identifier] isEqualToString:@"showLibraryFromMainPage"] && row == 1){
-        LibraryViewController *libraryView = [segue destinationViewController];
+        LibraryTableViewController *libraryTableView = [segue destinationViewController];
 
     }
     
