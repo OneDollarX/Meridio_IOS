@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *bookLibraryImageView;
 @property (strong, nonatomic) IBOutlet UILabel *bookLibraryTitle;
 @property (strong, nonatomic) IBOutlet UILabel *bookLibraryCategories;
+@property (strong, nonatomic) IBOutlet UILabel *bookLibraryId;
 
 @end

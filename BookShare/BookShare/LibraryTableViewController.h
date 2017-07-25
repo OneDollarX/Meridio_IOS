@@ -12,6 +12,7 @@
     NSMutableArray *title;
     NSMutableArray *categories;
     NSMutableArray *imageURL;
+    NSMutableArray *bookId;
 }
 - (IBAction)refresh:(id)sender;
 

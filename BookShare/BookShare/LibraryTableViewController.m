@@ -53,6 +53,7 @@
     NSData *postData = [NSJSONSerialization
                         dataWithJSONObject:dicData options:0 error:&error];
     [request setHTTPBody:postData];
+    NSLog(@"here");
     
     
     
@@ -85,6 +86,8 @@
                                                 NSLog(@"%@",categories);
                                                 imageURL = [infoJson valueForKeyPath:@"books.imageUrl"];
                                                 NSLog(@"%@",imageURL);
+                                                bookId = [infoJson valueForKeyPath:@"books.bookId"];
+                                                NSLog(@"%@",bookId);
 
                                             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                                         });
@@ -158,6 +161,7 @@
     
     cell.bookLibraryTitle.text = title[indexPath.row];
     cell.bookLibraryCategories.text = categories[indexPath.row];
+    cell.bookLibraryId.text = [NSString stringWithFormat:@"%@",bookId[indexPath.row]];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURL[indexPath.row]]];
     NSData *data = [NSData dataWithContentsOfURL:url];
@@ -191,7 +195,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self deleteBook];
+        
+        NSLog(@"%@",bookId[indexPath.row]);
+        [self deleteBook:bookId[indexPath.row]];
         
         
         
@@ -244,7 +250,7 @@
 - (IBAction)refresh:(id)sender {
     [self viewDidLoad];
 }
--(void)deleteBook{
+-(void)deleteBook:(NSString *)deleteBookId{
     
     
     // Setup the session
@@ -267,7 +273,7 @@
     
     NSMutableDictionary *dicData = [[NSMutableDictionary
                                      alloc]init];
-    [dicData setValue:@"25" forKey:@"bookId"];
+    [dicData setValue:deleteBookId forKey:@"bookId"];
     
     NSError *error;
     NSData *postData = [NSJSONSerialization
@@ -294,24 +300,16 @@
                                                     JSONObjectWithData:data
                                                     options:kNilOptions
                                                     error:&error];
+                                        
+                                        for(NSString *key in [infoJson allKeys]) {
+                                            NSLog(@"%@",[infoJson objectForKey:key]);
+                                        }
                                         if([[infoJson objectForKey:@"status"] isEqualToString:@"success"]){
                                             NSLog(@"delete successfully");
                                             //TODO:UIAlertView
                                         }
 
-                                        
-//                                        [super viewDidLoad];
-//                                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//                                            title = [infoJson valueForKeyPath:@"books.title"];
-//                                            NSLog(@"%@",title);
-//                                            categories = [infoJson valueForKeyPath:@"books.genre"];
-//                                            NSLog(@"%@",categories);
-//                                            imageURL = [infoJson valueForKeyPath:@"books.imageUrl"];
-//                                            NSLog(@"%@",imageURL);
-//                                            
-//                                            [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
-//                                        });
-                                        
+                                   
                                         
                                         
                                         
