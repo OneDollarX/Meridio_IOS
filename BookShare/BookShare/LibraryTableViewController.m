@@ -9,28 +9,127 @@
 #import "LibraryTableViewController.h"
 #import "LibraryTableViewCell.h"
 
-@interface LibraryTableViewController ()
+@interface LibraryTableViewController () {
+    NSString *userId;
+    NSDictionary *infoJson;
+    
+}
 
 @end
 
 @implementation LibraryTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+
+
+    userId = @"4";
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    /**************************getmybooks start***********************/
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    title = [NSMutableArray arrayWithObjects:@"Fovernance of Security Systems",@"The Astronomical Ephemeris",@"Brown's Boundary Control and Legal Principles", nil];
+    // Setup the session
+    NSURLSessionConfiguration * configuration =
+    [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * session = [NSURLSession
+                              sessionWithConfiguration:configuration];
+    NSString *urlString = [NSString stringWithFormat:@"http://ec2-54-85-207-189.compute-1.amazonaws.com:4000/getMyBooks"];
+    // create HttpURLrequest
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest
+                                    requestWithURL:url
+                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                    timeoutInterval:60.0];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPMethod:@"POST"];
+    
+    
+    
+    NSMutableDictionary *dicData = [[NSMutableDictionary
+                                     alloc]init];
+    [dicData setValue:userId forKey:@"userId"];
+
+    NSError *error;
+    NSData *postData = [NSJSONSerialization
+                        dataWithJSONObject:dicData options:0 error:&error];
+    [request setHTTPBody:postData];
+    
+    
+    
+    // Create a data task to transfer the web service endpoint contents
+    NSURLSessionUploadTask * dataTask
+    = [session uploadTaskWithRequest:request
+                            fromData:postData completionHandler:^(NSData *data,
+                                                                  NSURLResponse *response, NSError *error) {
+                                
+                                
+                                
+                                if (!error) {
+                                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*) response;
+                                    NSLog(@"%li",(long)httpResponse.statusCode);
+                                    if (httpResponse.statusCode == 200) {
+                                        
+                                        
+                                        infoJson = [NSJSONSerialization
+                                                              JSONObjectWithData:data
+                                                              options:kNilOptions
+                                                              error:&error];
+                                        for(NSString *key in [infoJson allKeys]) {
+                                            NSLog(@"%@",[infoJson objectForKey:key]);
+                                        }
+                                        [super viewDidLoad];
+                                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                                                title = [infoJson valueForKeyPath:@"books.title"];
+                                                NSLog(@"%@",title);
+                                                categories = [infoJson valueForKeyPath:@"books.genre"];
+                                                NSLog(@"%@",categories);
+                                                imageURL = [infoJson valueForKeyPath:@"books.imageUrl"];
+                                                NSLog(@"%@",imageURL);
+
+                                            [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+                                        });
+                                        
+                                        
+                                        
+
+                                        
+                                        
+
+                                        
+                                        
+                                    }else{
+                                        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                                       message:@"Something is wrong with the server. Plsese check!"
+                                                                                                preferredStyle:UIAlertControllerStyleAlert];
+                                        
+                                        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                                              handler:^(UIAlertAction * action) {}];
+                                        
+                                        [alert addAction:defaultAction];
+                                        [self presentViewController:alert animated:YES completion:nil];
+                                    }
+                                }
+                                
+                            }];
+    
+    [dataTask resume];
+    
+    
+    /**************************getmybooks END***********************/
+    
+
 
     
     
-    categories = [NSMutableArray arrayWithObjects:@"Crime prevention",@"Ephemerides",@"Technology & Engineering",nil];
     
-    imageURL = [NSMutableArray arrayWithObjects:@"https://books.google.com/books/content?id=fiAinQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",@"http://books.google.com/books/content?id=zBk8AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",@"http://books.google.com/books/content?id=E5k3AgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",nil];
+//    title = [NSMutableArray arrayWithObjects:@"Fovernance of Security Systems",@"The Astronomical Ephemeris",@"Brown's Boundary Control and Legal Principles", nil];
+//    NSLog(@"this is the titles %@",title);
+//
+//    
+//    
+//    categories = [NSMutableArray arrayWithObjects:@"Crime prevention",@"Ephemerides",@"Technology & Engineering",nil];
+//    
+//    imageURL = [NSMutableArray arrayWithObjects:@"https://books.google.com/books/content?id=fiAinQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",@"http://books.google.com/books/content?id=zBk8AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",@"http://books.google.com/books/content?id=E5k3AgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",nil];
     
     
 }
@@ -55,6 +154,8 @@
     LibraryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"libraryCell" forIndexPath:indexPath];
     
     // Configure the cell...
+
+    
     cell.bookLibraryTitle.text = title[indexPath.row];
     cell.bookLibraryCategories.text = categories[indexPath.row];
     
@@ -67,6 +168,7 @@
     
     return cell;
 }
+
 
 
 
@@ -89,9 +191,16 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [title removeObjectAtIndex:indexPath.row];//or something similar to this based on your data source array structure
+        [self deleteBook];
+        
+        
+        
+        
+        
+        //[title removeObjectAtIndex:indexPath.row];//or something similar to this based on your data source array structure
         //remove the corresponding object from your data source array before this or else you will get a crash
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self viewDidLoad];
     }
 }
 
@@ -132,4 +241,101 @@
 }
 */
 
+- (IBAction)refresh:(id)sender {
+    [self viewDidLoad];
+}
+-(void)deleteBook{
+    
+    
+    // Setup the session
+    NSURLSessionConfiguration * configuration =
+    [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * session = [NSURLSession
+                              sessionWithConfiguration:configuration];
+    NSString *urlString = [NSString stringWithFormat:@"http://ec2-54-85-207-189.compute-1.amazonaws.com:4000/deleteBook"];
+    // create HttpURLrequest
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest
+                                    requestWithURL:url
+                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                    timeoutInterval:60.0];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPMethod:@"POST"];
+    
+    
+    
+    NSMutableDictionary *dicData = [[NSMutableDictionary
+                                     alloc]init];
+    [dicData setValue:@"25" forKey:@"bookId"];
+    
+    NSError *error;
+    NSData *postData = [NSJSONSerialization
+                        dataWithJSONObject:dicData options:0 error:&error];
+    [request setHTTPBody:postData];
+    
+    
+    
+    // Create a data task to transfer the web service endpoint contents
+    NSURLSessionUploadTask * dataTask
+    = [session uploadTaskWithRequest:request
+                            fromData:postData completionHandler:^(NSData *data,
+                                                                  NSURLResponse *response, NSError *error) {
+                                
+                                
+                                
+                                if (!error) {
+                                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*) response;
+                                    NSLog(@"%li",(long)httpResponse.statusCode);
+                                    if (httpResponse.statusCode == 200) {
+                                        
+                                        
+                                        infoJson = [NSJSONSerialization
+                                                    JSONObjectWithData:data
+                                                    options:kNilOptions
+                                                    error:&error];
+                                        if([[infoJson objectForKey:@"status"] isEqualToString:@"success"]){
+                                            NSLog(@"delete successfully");
+                                            //TODO:UIAlertView
+                                        }
+
+                                        
+//                                        [super viewDidLoad];
+//                                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                                            title = [infoJson valueForKeyPath:@"books.title"];
+//                                            NSLog(@"%@",title);
+//                                            categories = [infoJson valueForKeyPath:@"books.genre"];
+//                                            NSLog(@"%@",categories);
+//                                            imageURL = [infoJson valueForKeyPath:@"books.imageUrl"];
+//                                            NSLog(@"%@",imageURL);
+//                                            
+//                                            [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+//                                        });
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    }else{
+                                        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                                       message:@"Something is wrong with the server. Plsese check!"
+                                                                                                preferredStyle:UIAlertControllerStyleAlert];
+                                        
+                                        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                                              handler:^(UIAlertAction * action) {}];
+                                        
+                                        [alert addAction:defaultAction];
+                                        [self presentViewController:alert animated:YES completion:nil];
+                                    }
+                                }
+                                
+                            }];
+    
+    [dataTask resume];
+    
+}
 @end

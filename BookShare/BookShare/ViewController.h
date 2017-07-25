@@ -11,14 +11,12 @@
 @interface ViewController : UIViewController
 
 
-
+//passing varibales
 @property (nonatomic) NSString *username;
-
 @property (nonatomic) NSString *emailAddress;
+@property (nonatomic) NSString *userId;
 
-
-
-
+//setting
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingBtn;
 - (IBAction)SettingClicked:(id)sender;
 

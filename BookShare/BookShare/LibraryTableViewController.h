@@ -13,5 +13,6 @@
     NSMutableArray *categories;
     NSMutableArray *imageURL;
 }
+- (IBAction)refresh:(id)sender;
 
 @end

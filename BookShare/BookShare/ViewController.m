@@ -12,12 +12,7 @@
 #import "LibraryTableViewController.h"
 #import "MyRequestsTableViewController.h"
 
-@interface ViewController () <UITableViewDelegate,UITableViewDataSource> {
-    NSArray *settingArray;
-
-    
-    
-}
+@interface ViewController ()
 
 @end
 
@@ -25,12 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
-  
+
     //hide back button
     self.navigationItem.hidesBackButton = YES;
+    
+    //NSLog(@"ViewController userid is %@",_userId);
     
     
     
@@ -45,13 +39,6 @@
 
 
 - (IBAction)SettingClicked:(id)sender {
-    
-//    if(self.tableView.hidden == YES){
-//        self.tableView.hidden = NO;
-//    }else{
-//        self.tableView.hidden = YES;
-//        
-//    }
 }
 
 #pragma mark - Navigation
@@ -60,9 +47,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
 
-    
     
 }
 
