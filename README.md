@@ -7,8 +7,14 @@
 `/deleteBook` <br /> 
 `/getMyBooks` <br />
 
-# TODO:
+# TODO BackEnd Connection:
+`/createTradeRequest`<br />
+`/getTradeRequests`<br />
+`/updateTradeRequest`<br />
+`/booksAvailableWithRequestor`<br />
+
+# TODO 
 share userId among all the views <br />
 popover menu <br />
-UI <br />
+UI Design for books around me part<br />
 non facebook sign in? <br />
