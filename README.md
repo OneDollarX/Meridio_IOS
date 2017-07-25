@@ -1,13 +1,14 @@
 # Meridio_IOS
 08723 Book Share Group Project
 
-#TODO:
-share userId among all the views
-popover menu
-UI
-non facebook sign in?
+# Finished
+`/setUserSession `<br />
+`/postBook` <br />
+`/deleteBook` <br /> 
+`/getMyBooks` <br />
 
-#finished
-post a book
-delete a book
-library
+# TODO:
+share userId among all the views <br />
+popover menu <br />
+UI <br />
+non facebook sign in? <br />
