@@ -13,8 +13,9 @@
 `/updateTradeRequest`<br />
 `/booksAvailableWithRequestor`<br />
 
-# TODO 
+# Questions?
 share userId among all the views <br />
 popover menu <br />
 UI Design for books around me part<br />
 non facebook sign in? <br />
+setUserSession duplicate? <br />
