@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *myRequestsBookTitle;
 @property (strong, nonatomic) IBOutlet UILabel *myRequestsToUsername;
 @property (strong, nonatomic) IBOutlet UILabel *myRequestsStatus;
+@property (strong, nonatomic) IBOutlet UIImageView *statusImage;
 
 @end

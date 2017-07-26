@@ -26,6 +26,8 @@
 		1B7D44B21F1E6E500015EE1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7D44B01F1E6E500015EE1B /* LaunchScreen.storyboard */; };
 		1B7D44BD1F1E6E500015EE1B /* SettingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44BC1F1E6E500015EE1B /* SettingTests.m */; };
 		1B7D44C81F1E6E500015EE1B /* SettingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44C71F1E6E500015EE1B /* SettingUITests.m */; };
+		1B9422E01F27E7E900A928A3 /* RequestsReceivedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9422DF1F27E7E900A928A3 /* RequestsReceivedTableViewController.m */; };
+		1B9422E31F27E82D00A928A3 /* RequestsReceivedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9422E21F27E82D00A928A3 /* RequestsReceivedTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,10 @@
 		1B7D44C31F1E6E500015EE1B /* BookShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookShareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7D44C71F1E6E500015EE1B /* SettingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingUITests.m; sourceTree = "<group>"; };
 		1B7D44C91F1E6E500015EE1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B9422DE1F27E7E900A928A3 /* RequestsReceivedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsReceivedTableViewController.h; sourceTree = "<group>"; };
+		1B9422DF1F27E7E900A928A3 /* RequestsReceivedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsReceivedTableViewController.m; sourceTree = "<group>"; };
+		1B9422E11F27E82D00A928A3 /* RequestsReceivedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsReceivedTableViewCell.h; sourceTree = "<group>"; };
+		1B9422E21F27E82D00A928A3 /* RequestsReceivedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsReceivedTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,10 @@
 				1B7D44AB1F1E6E500015EE1B /* Main.storyboard */,
 				1B7D44A51F1E6E500015EE1B /* AppDelegate.h */,
 				1B7D44A61F1E6E500015EE1B /* AppDelegate.m */,
+				1B9422E11F27E82D00A928A3 /* RequestsReceivedTableViewCell.h */,
+				1B9422E21F27E82D00A928A3 /* RequestsReceivedTableViewCell.m */,
+				1B9422DE1F27E7E900A928A3 /* RequestsReceivedTableViewController.h */,
+				1B9422DF1F27E7E900A928A3 /* RequestsReceivedTableViewController.m */,
 				1B6CD4FA1F2040E900ED064D /* MyRequestsTableViewController.h */,
 				1B6CD4FB1F2040E900ED064D /* MyRequestsTableViewController.m */,
 				1B6CD4F71F20403900ED064D /* MyRequestsTableViewCell.h */,
@@ -354,6 +364,8 @@
 				1B3610BB1F1FFD140017A077 /* ISBNViewController.m in Sources */,
 				1B6CD4F61F202C4D00ED064D /* LibraryTableViewCell.m in Sources */,
 				1B3610B51F1FE9AF0017A077 /* ScanViewController.m in Sources */,
+				1B9422E01F27E7E900A928A3 /* RequestsReceivedTableViewController.m in Sources */,
+				1B9422E31F27E82D00A928A3 /* RequestsReceivedTableViewCell.m in Sources */,
 				1B7D44A71F1E6E500015EE1B /* AppDelegate.m in Sources */,
 				1B6CD4F31F2029AC00ED064D /* LibraryTableViewController.m in Sources */,
 				1B7D44A41F1E6E500015EE1B /* main.m in Sources */,

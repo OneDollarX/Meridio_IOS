@@ -205,8 +205,9 @@
         
         //[title removeObjectAtIndex:indexPath.row];//or something similar to this based on your data source array structure
         //remove the corresponding object from your data source array before this or else you will get a crash
+
+        
         //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        [self viewDidLoad];
     }
 }
 
@@ -334,6 +335,7 @@
                             }];
     
     [dataTask resume];
+    [self viewDidLoad];
     
 }
 @end

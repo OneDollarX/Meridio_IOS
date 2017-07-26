@@ -1,28 +1,29 @@
 //
-//  MyRequestsTableViewController.m
+//  RequestsReceivedTableViewController.m
 //  BookShare
 //
-//  Created by YILUN XU on 7/19/17.
+//  Created by YILUN XU on 7/25/17.
 //  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
 //
 
-#import "MyRequestsTableViewController.h"
-#import "MyRequestsTableViewCell.h"
+#import "RequestsReceivedTableViewController.h"
+#import "RequestsReceivedTableViewCell.h"
 
-@interface MyRequestsTableViewController () {
-    NSString *fromUserId;
-    NSDictionary *requestsSentJson;
+@interface RequestsReceivedTableViewController () {
+    NSString *toUserId;
+    NSDictionary *requestsReceivedJson;
 }
 
 @end
 
-@implementation MyRequestsTableViewController
+@implementation RequestsReceivedTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    fromUserId = @"123";
     
-    /**************************requests sent start***********************/
+    toUserId = @"123";
+    
+    /**************************requests received start***********************/
     
     
     // Setup the session
@@ -45,7 +46,7 @@
     
     NSMutableDictionary *dicData = [[NSMutableDictionary
                                      alloc]init];
-    [dicData setValue:fromUserId forKey:@"fromUserId"];
+    [dicData setValue:toUserId forKey:@"toUserId"];
     
     NSError *error;
     NSData *postData = [NSJSONSerialization
@@ -69,27 +70,30 @@
                                     if (httpResponse.statusCode == 200) {
                                         
                                         
-                                        requestsSentJson = [NSJSONSerialization
-                                                    JSONObjectWithData:data
-                                                    options:kNilOptions
-                                                    error:&error];
-                                        for(NSString *key in [requestsSentJson allKeys]) {
-                                            NSLog(@"%@",[requestsSentJson objectForKey:key]);
+                                        requestsReceivedJson = [NSJSONSerialization
+                                                            JSONObjectWithData:data
+                                                            options:kNilOptions
+                                                            error:&error];
+                                        for(NSString *key in [requestsReceivedJson allKeys]) {
+                                            NSLog(@"%@",[requestsReceivedJson objectForKey:key]);
                                         }
                                         [super viewDidLoad];
                                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                                            //title = [requestsSentJson valueForKeyPath:@"tradeRequests.requestorWantsBook"];
-                                            NSLog(@"%@",title);
-                                            //status = [requestsSentJson valueForKeyPath:@"tradeRequests.status"];
-                                            NSLog(@"%@",status);
-                                            //user = [requestsSentJson valueForKeyPath:@"tradeRequests.toUserId"];
-                                            NSLog(@"%@",user);
-
+                                            
+                                            requestorWantsBook = [requestsReceivedJson valueForKeyPath:@"tradeRequests.requestorWantsBook"];
+                                            NSLog(@"%@",requestorWantsBook);
+                                            acceptorWantsBook = [requestsReceivedJson valueForKeyPath:@"tradeRequests.acceptorWantsBook"];
+                                            NSLog(@"%@",requestorWantsBook);
+                                            statusReceived = [requestsReceivedJson valueForKeyPath:@"tradeRequests.status"];
+                                            NSLog(@"%@",statusReceived);
+                                            usernameReceived = [requestsReceivedJson valueForKeyPath:@"tradeRequests.fromUserId"];
+                                            NSLog(@"%@",usernameReceived);
+                                            
                                             
                                             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                                         });
                                         
-                                  
+                                        
                                         
                                         
                                     }else{
@@ -110,23 +114,9 @@
     [dataTask resume];
     
     
-    /**************************requests sent end***********************/
+    /**************************requests received end***********************/
     
 
-    /*****************************hardcode start*****************************/
-//    
-//    title = [NSMutableArray arrayWithObjects:@"Fovernance of Security Systems",@"The Astronomical Ephemeris",@"Brown's Boundary Control and Legal Principles", nil];
-//    
-//    
-//    
-//    user = [NSMutableArray arrayWithObjects:@"user1",@"user2",@"user3",nil];
-//    
-//    imageURL = [NSMutableArray arrayWithObjects:@"https://books.google.com/books/content?id=fiAinQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",@"http://books.google.com/books/content?id=zBk8AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",@"http://books.google.com/books/content?id=E5k3AgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",nil];
-//    
-//    status = [NSMutableArray arrayWithObjects:@"pending",@"approved",@"pending", nil];
-    /*****************************hardcode end*****************************/
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,29 +131,33 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return user.count;
+    return usernameReceived.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MyRequestsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myRequestsCell" forIndexPath:indexPath];
+    RequestsReceivedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RequestsReceivedCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.myRequestsBookTitle.text = title[indexPath.row];
-    cell.myRequestsToUsername.text = [NSString stringWithFormat:@"%@",user[indexPath.row]];
-    cell.myRequestsStatus.text = status[indexPath.row];
-    if([status[indexPath.row] isEqualToString:@"pending"]){
+    cell.acceptorWantsBook.text = acceptorWantsBook[indexPath.row];
+    cell.requestorWantsBook.text = requestorWantsBook[indexPath.row];
+    cell.statusReceived.text = statusReceived[indexPath.row];
+    cell.usernameReceived.text = usernameReceived[indexPath.row];
+    if([statusReceived[indexPath.row] isEqualToString:@"pending"]){
         cell.statusImage.image = [UIImage imageNamed:@"pending.png"];
-    }else if([status[indexPath.row] isEqualToString:@"approved"]){
+    }else if([statusReceived[indexPath.row] isEqualToString:@"approved"]){
         cell.statusImage.image = [UIImage imageNamed:@"success.png"];
-
+        
     }else{
         cell.statusImage.image = [UIImage imageNamed:@"decline.png"];
     }
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURL[indexPath.row]]];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *image = [UIImage imageWithData:data];
-    cell.myRequestsImageView.image = image;
+    
+    
+    
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURL[indexPath.row]]];
+//    NSData *data = [NSData dataWithContentsOfURL:url];
+//    UIImage *image = [UIImage imageWithData:data];
+//    cell.myRequestsImageView.image = image;
     return cell;
 }
 
