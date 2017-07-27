@@ -35,6 +35,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="25"/>
                                 <state key="normal" title="Show Books Around Me!"/>
+                                <connections>
+                                    <segue destination="DO3-SP-r88" kind="push" id="DRA-tM-Rej"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZe-DI-zNR">
                                 <rect key="frame" x="257" y="72" width="48" height="30"/>
@@ -175,7 +178,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="obQ-pN-TeS" id="t0i-a2-U3F">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-z5-Nds">
@@ -248,7 +251,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uUZ-b9-5OR" id="Eia-Sw-iGz">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qdo-4z-hdU">
@@ -339,7 +342,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1VT-wF-osc" id="FD2-H3-SHQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ast-lZ-EJb">
@@ -537,6 +540,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qs5-zY-Psx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4507.5" y="-1618.3098591549297"/>
+        </scene>
+        <!--Books Around Me-->
+        <scene sceneID="13j-aS-gKn">
+            <objects>
+                <tableViewController id="DO3-SP-r88" customClass="BooksAroundMeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" id="VOU-v0-bre">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookAroundMeCell" rowHeight="113" id="nkN-OI-Jsb" customClass="BooksAroundMeTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="320" height="113"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nkN-OI-Jsb" id="OIc-Te-56r">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IpC-S5-Lhi">
+                                            <rect key="frame" x="8" y="8" width="61" height="71"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYX-Ag-ePt">
+                                            <rect key="frame" x="77" y="4" width="235" height="53"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookAroundMeImageView" destination="IpC-S5-Lhi" id="cjG-on-wbV"/>
+                                    <outlet property="bookAroundMeTitle" destination="NYX-Ag-ePt" id="pAC-Wh-Dva"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DO3-SP-r88" id="Omr-im-uLh"/>
+                            <outlet property="delegate" destination="DO3-SP-r88" id="ekz-gY-AZQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Books Around Me" id="jR1-Xc-eks"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8eo-xb-Y4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3624.375" y="585.21126760563379"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Quj-so-f7J">
+            <objects>
+                <navigationController id="hAr-JW-iq0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k4c-Nm-n6g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DO3-SP-r88" kind="relationship" relationship="rootViewController" id="qTr-qU-0vK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zu9-pX-y1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2611" y="586"/>
         </scene>
         <!--Enter ISBN Manully-->
         <scene sceneID="l6p-fT-p9s">
@@ -739,7 +804,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="0Mz-Ai-fck"/>
         <segue reference="Xxg-H4-YRq"/>
-        <segue reference="oJm-jh-o3s"/>
+        <segue reference="dO0-dw-eLa"/>
         <segue reference="CUq-A6-eST"/>
+        <segue reference="qTr-qU-0vK"/>
     </inferredMetricsTieBreakers>
 </document>
