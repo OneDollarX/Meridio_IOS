@@ -13,6 +13,8 @@
 		1B3610B51F1FE9AF0017A077 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3610B41F1FE9AF0017A077 /* ScanViewController.m */; };
 		1B3610B81F1FF15E0017A077 /* BookDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3610B71F1FF15E0017A077 /* BookDetailsViewController.m */; };
 		1B3610BB1F1FFD140017A077 /* ISBNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3610BA1F1FFD140017A077 /* ISBNViewController.m */; };
+		1B6B8F441F2A225D00ED47F5 /* BooksAroundMeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B8F411F2A225D00ED47F5 /* BooksAroundMeTableViewCell.m */; };
+		1B6B8F451F2A225D00ED47F5 /* BooksAroundMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B8F431F2A225D00ED47F5 /* BooksAroundMeTableViewController.m */; };
 		1B6CD4F01F201B4E00ED064D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6CD4EF1F201B4E00ED064D /* CoreLocation.framework */; };
 		1B6CD4F31F2029AC00ED064D /* LibraryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4F21F2029AC00ED064D /* LibraryTableViewController.m */; };
 		1B6CD4F61F202C4D00ED064D /* LibraryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4F51F202C4D00ED064D /* LibraryTableViewCell.m */; };
@@ -63,6 +65,10 @@
 		1B3610B71F1FF15E0017A077 /* BookDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailsViewController.m; sourceTree = "<group>"; };
 		1B3610B91F1FFD140017A077 /* ISBNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISBNViewController.h; sourceTree = "<group>"; };
 		1B3610BA1F1FFD140017A077 /* ISBNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISBNViewController.m; sourceTree = "<group>"; };
+		1B6B8F401F2A225D00ED47F5 /* BooksAroundMeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksAroundMeTableViewCell.h; sourceTree = "<group>"; };
+		1B6B8F411F2A225D00ED47F5 /* BooksAroundMeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksAroundMeTableViewCell.m; sourceTree = "<group>"; };
+		1B6B8F421F2A225D00ED47F5 /* BooksAroundMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksAroundMeTableViewController.h; sourceTree = "<group>"; };
+		1B6B8F431F2A225D00ED47F5 /* BooksAroundMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksAroundMeTableViewController.m; sourceTree = "<group>"; };
 		1B6CD4EF1F201B4E00ED064D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1B6CD4F11F2029AC00ED064D /* LibraryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryTableViewController.h; sourceTree = "<group>"; };
 		1B6CD4F21F2029AC00ED064D /* LibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryTableViewController.m; sourceTree = "<group>"; };
@@ -179,6 +185,10 @@
 				1BE387731F2907F4004CAFD5 /* TradeBookDetailsViewController.m */,
 				1BE3876F1F28F24F004CAFD5 /* UserLibraryTableViewController.h */,
 				1BE387701F28F24F004CAFD5 /* UserLibraryTableViewController.m */,
+				1B6B8F401F2A225D00ED47F5 /* BooksAroundMeTableViewCell.h */,
+				1B6B8F411F2A225D00ED47F5 /* BooksAroundMeTableViewCell.m */,
+				1B6B8F421F2A225D00ED47F5 /* BooksAroundMeTableViewController.h */,
+				1B6B8F431F2A225D00ED47F5 /* BooksAroundMeTableViewController.m */,
 				1BE3876C1F28F225004CAFD5 /* UserLibarayTableViewCell.h */,
 				1BE3876D1F28F225004CAFD5 /* UserLibarayTableViewCell.m */,
 				1B9422E11F27E82D00A928A3 /* RequestsReceivedTableViewCell.h */,
@@ -380,6 +390,8 @@
 				1B3610BB1F1FFD140017A077 /* ISBNViewController.m in Sources */,
 				1B6CD4F61F202C4D00ED064D /* LibraryTableViewCell.m in Sources */,
 				1BE387741F2907F4004CAFD5 /* TradeBookDetailsViewController.m in Sources */,
+				1B6B8F451F2A225D00ED47F5 /* BooksAroundMeTableViewController.m in Sources */,
+				1B6B8F441F2A225D00ED47F5 /* BooksAroundMeTableViewCell.m in Sources */,
 				1B3610B51F1FE9AF0017A077 /* ScanViewController.m in Sources */,
 				1B9422E01F27E7E900A928A3 /* RequestsReceivedTableViewController.m in Sources */,
 				1B9422E31F27E82D00A928A3 /* RequestsReceivedTableViewCell.m in Sources */,
