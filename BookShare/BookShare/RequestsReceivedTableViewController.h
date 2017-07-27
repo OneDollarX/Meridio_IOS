@@ -11,6 +11,7 @@
 @interface RequestsReceivedTableViewController : UITableViewController
 {
     NSMutableArray *requestorWantsBook;
+    NSMutableArray *tradeId;
     NSMutableArray *acceptorWantsBook;
     NSMutableArray *usernameReceived;
     NSMutableArray *statusReceived;

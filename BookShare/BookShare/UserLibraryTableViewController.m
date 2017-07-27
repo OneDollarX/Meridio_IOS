@@ -1,30 +1,33 @@
 //
-//  RequestsReceivedTableViewController.m
+//  UserLibraryTableViewController.m
 //  BookShare
 //
-//  Created by YILUN XU on 7/25/17.
+//  Created by YILUN XU on 7/26/17.
 //  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
 //
 
-#import "RequestsReceivedTableViewController.h"
-#import "RequestsReceivedTableViewCell.h"
 #import "UserLibraryTableViewController.h"
+#import "UserLibarayTableViewCell.h"
+#import "TradeBookDetailsViewController.h"
 
-@interface RequestsReceivedTableViewController () {
-    NSString *toUserId;
-    NSDictionary *requestsReceivedJson;
+@interface UserLibraryTableViewController () {
+    NSString *userId;
+    NSDictionary *infoJson;
+    NSString *tradeId;
 }
 
 @end
 
-@implementation RequestsReceivedTableViewController
+@implementation UserLibraryTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"this is the passing value userId =%@",_receivedUserId);
+    //userId = @"4";
+    userId = _receivedUserId;
+    tradeId = _receivedTradeId;
     
-    toUserId = @"123";
-    
-    /**************************requests received start***********************/
+    /**************************getUserbooks start***********************/
     
     
     // Setup the session
@@ -32,7 +35,7 @@
     [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession * session = [NSURLSession
                               sessionWithConfiguration:configuration];
-    NSString *urlString = [NSString stringWithFormat:@"http://ec2-54-85-207-189.compute-1.amazonaws.com:4000/getTradeRequests"];
+    NSString *urlString = [NSString stringWithFormat:@"http://ec2-54-85-207-189.compute-1.amazonaws.com:4000/booksAvailableWithRequestor"];
     // create HttpURLrequest
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest
@@ -47,7 +50,7 @@
     
     NSMutableDictionary *dicData = [[NSMutableDictionary
                                      alloc]init];
-    [dicData setValue:toUserId forKey:@"toUserId"];
+    [dicData setValue:userId forKey:@"userId"];
     
     NSError *error;
     NSData *postData = [NSJSONSerialization
@@ -71,28 +74,33 @@
                                     if (httpResponse.statusCode == 200) {
                                         
                                         
-                                        requestsReceivedJson = [NSJSONSerialization
-                                                            JSONObjectWithData:data
-                                                            options:kNilOptions
-                                                            error:&error];
-                                        for(NSString *key in [requestsReceivedJson allKeys]) {
-                                            NSLog(@"%@",[requestsReceivedJson objectForKey:key]);
+                                        infoJson = [NSJSONSerialization
+                                                    JSONObjectWithData:data
+                                                    options:kNilOptions
+                                                    error:&error];
+                                        for(NSString *key in [infoJson allKeys]) {
+                                            NSLog(@"%@",[infoJson objectForKey:key]);
                                         }
                                         [super viewDidLoad];
                                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                                            
-                                            //requestorWantsBook = [requestsReceivedJson valueForKeyPath:@"tradeRequests.requestorWantsBook"];
-                                            NSLog(@"%@",requestorWantsBook);
-                                            //acceptorWantsBook = [requestsReceivedJson valueForKeyPath:@"tradeRequests.acceptorWantsBook"];
-                                            NSLog(@"%@",requestorWantsBook);
-                                            //statusReceived = [requestsReceivedJson valueForKeyPath:@"tradeRequests.status"];
-                                            NSLog(@"%@",statusReceived);
-                                            //usernameReceived = [requestsReceivedJson valueForKeyPath:@"tradeRequests.fromUserId"];
-                                            NSLog(@"%@",usernameReceived);
-                                            
+                                            title = [infoJson valueForKeyPath:@"books.title"];
+                                            NSLog(@"%@",title);
+                                            categories = [infoJson valueForKeyPath:@"books.genre"];
+                                            NSLog(@"%@",categories);
+                                            imageURL = [infoJson valueForKeyPath:@"books.imageUrl"];
+                                            NSLog(@"%@",imageURL);
+                                            bookId = [infoJson valueForKeyPath:@"books.bookId"];
+                                            NSLog(@"%@",bookId);
+                                            bookDescription = [infoJson valueForKeyPath:@"books.description"];
+                                            NSLog(@"%@",bookDescription);
                                             
                                             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                                         });
+                                        
+                                        
+                                        
+                                        
+                                        
                                         
                                         
                                         
@@ -115,24 +123,7 @@
     [dataTask resume];
     
     
-    /**************************requests received end***********************/
-    
-    
-    /****************************hardcode start****************************/
-    
-        requestorWantsBook = [NSMutableArray arrayWithObjects:@"Fovernance of Security Systems",@"The Astronomical Ephemeris",@"Brown's Boundary Control and Legal Principles", nil];
-    
-        tradeId = [NSMutableArray arrayWithObjects:@"1",@"2",@"3", nil];
-        acceptorWantsBook = [NSMutableArray arrayWithObjects:@"",@"",@"", nil];
-    
-    
-    
-        usernameReceived = [NSMutableArray arrayWithObjects:@"4",@"5",@"123",nil];
-    
-
-    
-        statusReceived = [NSMutableArray arrayWithObjects:@"pending",@"pending",@"pending", nil];
-    /****************************hardcode end****************************/
+    /**************************getUserbooks END***********************/
     
 
 }
@@ -145,40 +136,34 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return usernameReceived.count;
-}
 
+    return title.count;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    RequestsReceivedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RequestsReceivedCell" forIndexPath:indexPath];
+    UserLibarayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserLibraryCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.acceptorWantsBook.text = acceptorWantsBook[indexPath.row];
-    cell.requestorWantsBook.text = requestorWantsBook[indexPath.row];
-    cell.statusReceived.text = statusReceived[indexPath.row];
-    cell.usernameReceived.text = usernameReceived[indexPath.row];
-    if([statusReceived[indexPath.row] isEqualToString:@"pending"]){
-        cell.statusImage.image = [UIImage imageNamed:@"pending.png"];
-    }else if([statusReceived[indexPath.row] isEqualToString:@"approved"]){
-        cell.statusImage.image = [UIImage imageNamed:@"success.png"];
-        
-    }else{
-        cell.statusImage.image = [UIImage imageNamed:@"decline.png"];
-    }
+    
+    
+    cell.userLibraryBookTitle.text = title[indexPath.row];
+    cell.userLibraryBookCategories.text = categories[indexPath.row];
+    cell.userLibraryBookId.text = [NSString stringWithFormat:@"%@",bookId[indexPath.row]];
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURL[indexPath.row]]];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *image = [UIImage imageWithData:data];
+    cell.userLibraryBookImageView.image = image;
     
     
     
-//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURL[indexPath.row]]];
-//    NSData *data = [NSData dataWithContentsOfURL:url];
-//    UIImage *image = [UIImage imageWithData:data];
-//    cell.myRequestsImageView.image = image;
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -214,7 +199,6 @@
 }
 */
 
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -222,20 +206,31 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if([[segue identifier] isEqualToString:@"showUserLibrary"]){
-        UserLibraryTableViewController *userLibraryView = [segue destinationViewController];
+    if([[segue identifier] isEqualToString:@"showTradeBookDetail"]){
+        TradeBookDetailsViewController *tradeBookDetailView = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
         int row = (int) [myIndexPath row];
-        NSLog(@"%@",usernameReceived[row]);
+        NSLog(@"this is the index row %i",row);
         
-        userLibraryView.receivedUserId = usernameReceived[row];
-        userLibraryView.receivedTradeId = tradeId[row];
+        NSLog(@"%@",title[row]);
+        NSLog(@"%@",imageURL[row]);
+        NSLog(@"%@",categories[row]);
+        NSLog(@"%@",bookId[row]);
+        NSLog(@"%@",bookDescription[row]);
+        NSLog(@"trade id is %@",tradeId);
+        
+        tradeBookDetailView.tradeBookTitle = title[row];
+        tradeBookDetailView.tradeBookImageUrl = imageURL[row];
+        tradeBookDetailView.tradeBookGenre = categories[row];
+        tradeBookDetailView.tradeBookDescription = bookDescription[row];
+        tradeBookDetailView.tradeBookId = bookId[row];
+        tradeBookDetailView.tradeId = tradeId;
+
     }
     
     
     
 }
-
 
 @end

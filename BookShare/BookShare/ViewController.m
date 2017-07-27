@@ -22,7 +22,7 @@
     [super viewDidLoad];
 
     //hide back button
-    self.navigationItem.hidesBackButton = YES;
+    //self.navigationItem.hidesBackButton = YES;
     
     //NSLog(@"ViewController userid is %@",_userId);
     

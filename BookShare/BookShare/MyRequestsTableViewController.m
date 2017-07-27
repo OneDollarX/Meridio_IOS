@@ -78,11 +78,11 @@
                                         }
                                         [super viewDidLoad];
                                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                                            //title = [requestsSentJson valueForKeyPath:@"tradeRequests.requestorWantsBook"];
+                                            title = [requestsSentJson valueForKeyPath:@"tradeRequests.requestorWantsBook"];
                                             NSLog(@"%@",title);
-                                            //status = [requestsSentJson valueForKeyPath:@"tradeRequests.status"];
+                                            status = [requestsSentJson valueForKeyPath:@"tradeRequests.status"];
                                             NSLog(@"%@",status);
-                                            //user = [requestsSentJson valueForKeyPath:@"tradeRequests.toUserId"];
+                                            user = [requestsSentJson valueForKeyPath:@"tradeRequests.toUserId"];
                                             NSLog(@"%@",user);
 
                                             
