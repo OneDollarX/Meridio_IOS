@@ -43,6 +43,13 @@
     locationManager = [[CLLocationManager alloc] init];
     
     userId = @"4";
+    
+    //TODO: get current location
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
+    NSLog(@"%@,%@",currentLat,currentLong);
   
     
 }
@@ -160,11 +167,7 @@
 - (IBAction)postClicked:(id)sender {
     
     
-    //TODO: get current location
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    [locationManager startUpdatingLocation];
+
     
     
     //connect to the server and send all the book information and location
@@ -196,9 +199,8 @@
     [dicData setValue:userId forKey:@"userId"];
     [dicData setValue:_bookISBN forKey:@"isbn"];
     
-    NSLog(@"%@,%@",currentLat,currentLong);
-    
-    
+
+  
     [dicData setValue:currentLat forKey:@"latitude"];
     [dicData setValue:currentLong forKey:@"longitude"];
     [dicData setValue:thisimageURL forKey:@"imageUrl"];
@@ -310,7 +312,7 @@
     if (currentLocation != nil) {
         currentLong = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         currentLat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-        
+        NSLog(@"%@,%@",currentLat,currentLong);
         
         
     }

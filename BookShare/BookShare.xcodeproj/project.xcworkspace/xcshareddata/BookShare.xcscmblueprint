@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "86E5CE6946063FDBCD41DC07066C309DD56D177C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "86E5CE6946063FDBCD41DC07066C309DD56D177C" : 9223372036854775807,
+    "1B1416011D0F895FAA9CD29899F9A78449B3ECEF" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D2C2788B-6A1A-45A8-8BAB-2F43A11AA324",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "86E5CE6946063FDBCD41DC07066C309DD56D177C" : "Meridio_IOS\/",
+    "1B1416011D0F895FAA9CD29899F9A78449B3ECEF" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BookShare",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BookShare\/BookShare.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/OneDollarX\/08723.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1B1416011D0F895FAA9CD29899F9A78449B3ECEF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/OneDollarX\/Meridio_IOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "86E5CE6946063FDBCD41DC07066C309DD56D177C"
+    }
+  ]
+}
