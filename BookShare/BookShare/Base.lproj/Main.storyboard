@@ -477,6 +477,11 @@
                                 <segue destination="diw-rB-nyK" kind="show" id="N8O-Lq-fPS"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Decline" id="spO-BL-pBb">
+                            <connections>
+                                <action selector="declineRequest:" destination="Tig-MZ-Of4" id="F7x-aH-936"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCO-us-jGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1138,8 +1143,8 @@
         <segue reference="0Mz-Ai-fck"/>
         <segue reference="z0C-aA-nY4"/>
         <segue reference="05p-Ug-APB"/>
-        <segue reference="Ujy-ks-P2v"/>
-        <segue reference="6cG-px-F2Z"/>
         <segue reference="Ctc-Ru-Z3Z"/>
+        <segue reference="6cG-px-F2Z"/>
+        <segue reference="N8O-Lq-fPS"/>
     </inferredMetricsTieBreakers>
 </document>

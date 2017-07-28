@@ -233,4 +233,93 @@
     
 }
 
+- (IBAction)declineRequest:(id)sender {
+    
+    /**************************update request decline start***********************/
+    
+    
+    // Setup the session
+    NSURLSessionConfiguration * configuration =
+    [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * session = [NSURLSession
+                              sessionWithConfiguration:configuration];
+    NSString *urlString = [NSString stringWithFormat:@"http://ec2-54-85-207-189.compute-1.amazonaws.com:4000/updateTradeRequest"];
+    // create HttpURLrequest
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest
+                                    requestWithURL:url
+                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                    timeoutInterval:60.0];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPMethod:@"POST"];
+    
+    
+    
+    NSMutableDictionary *dicData = [[NSMutableDictionary
+                                     alloc]init];
+    [dicData setValue:tradeId forKey:@"id"];
+    [dicData setValue:@"declined" forKey:@"status"];
+    
+    NSError *error;
+    NSData *postData = [NSJSONSerialization
+                        dataWithJSONObject:dicData options:0 error:&error];
+    [request setHTTPBody:postData];
+    
+    
+    
+    // Create a data task to transfer the web service endpoint contents
+    NSURLSessionUploadTask * dataTask
+    = [session uploadTaskWithRequest:request
+                            fromData:postData completionHandler:^(NSData *data,
+                                                                  NSURLResponse *response, NSError *error) {
+                                
+                                
+                                
+                                if (!error) {
+                                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*) response;
+                                    NSLog(@"%li",(long)httpResponse.statusCode);
+                                    if (httpResponse.statusCode == 200) {
+                                        
+                                        
+                                        infoJson = [NSJSONSerialization
+                                                    JSONObjectWithData:data
+                                                    options:kNilOptions
+                                                    error:&error];
+                                        for(NSString *key in [infoJson allKeys]) {
+                                            NSLog(@"%@",[infoJson objectForKey:key]);
+                                        }
+
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    }else{
+                                        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                                       message:@"Something is wrong with the server. Plsese check!"
+                                                                                                preferredStyle:UIAlertControllerStyleAlert];
+                                        
+                                        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                                              handler:^(UIAlertAction * action) {}];
+                                        
+                                        [alert addAction:defaultAction];
+                                        [self presentViewController:alert animated:YES completion:nil];
+                                    }
+                                }
+                                
+                            }];
+    
+    [dataTask resume];
+    
+    
+    /**************************update request decline END***********************/
+    
+    
+    
+}
 @end

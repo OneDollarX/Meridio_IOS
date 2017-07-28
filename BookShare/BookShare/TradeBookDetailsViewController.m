@@ -72,8 +72,8 @@
     NSMutableDictionary *dicData = [[NSMutableDictionary
                                      alloc]init];
     
-    [dicData setValue:@"123" forKey:@"id"];
-    [dicData setValue:@"32" forKey:@"acceptorWantsBookId"];
+    [dicData setValue:_tradeId forKey:@"id"];
+    [dicData setValue:_tradeBookId forKey:@"acceptorWantsBookId"];
     [dicData setValue:@"approved" forKey:@"status"];
 
     NSError *error;

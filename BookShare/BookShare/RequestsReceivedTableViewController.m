@@ -89,6 +89,8 @@
                                             NSLog(@"%@",statusReceived);
                                             usernameReceived = [requestsReceivedJson valueForKeyPath:@"tradeRequests.fromUserId"];
                                             NSLog(@"%@",usernameReceived);
+                                            tradeId = [requestsReceivedJson valueForKeyPath:@"tradeRequests.id"];
+                                            NSLog(@"%@",tradeId);
                                             
                                             
                                             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];

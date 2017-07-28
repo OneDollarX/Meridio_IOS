@@ -20,5 +20,6 @@
 
 @property (strong, nonatomic) NSString *receivedUserId;
 @property (strong, nonatomic) NSString *receivedTradeId;
+- (IBAction)declineRequest:(id)sender;
 
 @end
