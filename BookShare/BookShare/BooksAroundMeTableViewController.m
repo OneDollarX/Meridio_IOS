@@ -85,7 +85,7 @@
                                             //NSLog(@"%@",imageURL);
                                             
                                             bookId = [json valueForKeyPath:@"books.id"];
-                                            //NSLog(@"%@",bookId);
+                                            NSLog(@"%@",bookId);
                                             
                                             aroundMeUserId = [json valueForKeyPath:@"books.user_id"];
                                             //NSLog(@"%@",aroundMeUserId);
@@ -151,7 +151,7 @@
     
     cell.bookAroundMeTitle.text = title[indexPath.row];
     //NSLog(@"%@",bookId[indexPath.row]);
-    //cell.bookAroundMeId.text = bookId[indexPath.row];
+    cell.bookAroundMeId.text = [NSString stringWithFormat:@"%@",bookId[indexPath.row]];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURL[indexPath.row]]];
     NSData *data = [NSData dataWithContentsOfURL:url];
@@ -220,6 +220,7 @@
         int row = (int) [myIndexPath row];
         selectedBookIsbn = aroundMeBookIsbn[row];
         bookRequestDetailsView.requestBookIsbn = selectedBookIsbn;
+        bookRequestDetailsView.requestBookId = [NSString stringWithFormat:@"%@",bookId[row]];
         
     }
 }

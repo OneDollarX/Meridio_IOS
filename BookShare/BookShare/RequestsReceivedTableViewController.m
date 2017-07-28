@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    toUserId = @"123";
+    toUserId = @"4";
     
     /**************************requests received start***********************/
     
@@ -81,13 +81,13 @@
                                         [super viewDidLoad];
                                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                             
-                                            //requestorWantsBook = [requestsReceivedJson valueForKeyPath:@"tradeRequests.requestorWantsBook"];
+                                            requestorWantsBook = [requestsReceivedJson valueForKeyPath:@"tradeRequests.requestorWantsBook"];
                                             NSLog(@"%@",requestorWantsBook);
-                                            //acceptorWantsBook = [requestsReceivedJson valueForKeyPath:@"tradeRequests.acceptorWantsBook"];
+                                            acceptorWantsBook = [requestsReceivedJson valueForKeyPath:@"tradeRequests.acceptorWantsBook"];
                                             NSLog(@"%@",requestorWantsBook);
-                                            //statusReceived = [requestsReceivedJson valueForKeyPath:@"tradeRequests.status"];
+                                            statusReceived = [requestsReceivedJson valueForKeyPath:@"tradeRequests.status"];
                                             NSLog(@"%@",statusReceived);
-                                            //usernameReceived = [requestsReceivedJson valueForKeyPath:@"tradeRequests.fromUserId"];
+                                            usernameReceived = [requestsReceivedJson valueForKeyPath:@"tradeRequests.fromUserId"];
                                             NSLog(@"%@",usernameReceived);
                                             
                                             
@@ -120,18 +120,18 @@
     
     /****************************hardcode start****************************/
     
-        requestorWantsBook = [NSMutableArray arrayWithObjects:@"Fovernance of Security Systems",@"The Astronomical Ephemeris",@"Brown's Boundary Control and Legal Principles", nil];
-    
-        tradeId = [NSMutableArray arrayWithObjects:@"1",@"2",@"3", nil];
-        acceptorWantsBook = [NSMutableArray arrayWithObjects:@"",@"",@"", nil];
-    
-    
-    
-        usernameReceived = [NSMutableArray arrayWithObjects:@"4",@"5",@"123",nil];
-    
-
-    
-        statusReceived = [NSMutableArray arrayWithObjects:@"pending",@"pending",@"pending", nil];
+//        requestorWantsBook = [NSMutableArray arrayWithObjects:@"Fovernance of Security Systems",@"The Astronomical Ephemeris",@"Brown's Boundary Control and Legal Principles", nil];
+//    
+//        tradeId = [NSMutableArray arrayWithObjects:@"1",@"2",@"3", nil];
+//        acceptorWantsBook = [NSMutableArray arrayWithObjects:@"",@"",@"", nil];
+//    
+//    
+//    
+//        usernameReceived = [NSMutableArray arrayWithObjects:@"4",@"5",@"123",nil];
+//    
+//
+//    
+//        statusReceived = [NSMutableArray arrayWithObjects:@"pending",@"pending",@"pending", nil];
     /****************************hardcode end****************************/
     
 
@@ -157,10 +157,10 @@
     RequestsReceivedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RequestsReceivedCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.acceptorWantsBook.text = acceptorWantsBook[indexPath.row];
-    cell.requestorWantsBook.text = requestorWantsBook[indexPath.row];
+    cell.acceptorWantsBook.text = [NSString stringWithFormat:@"%@",acceptorWantsBook[indexPath.row]];
+    cell.requestorWantsBook.text = [NSString stringWithFormat:@"%@",requestorWantsBook[indexPath.row]];
     cell.statusReceived.text = statusReceived[indexPath.row];
-    cell.usernameReceived.text = usernameReceived[indexPath.row];
+    cell.usernameReceived.text = [NSString stringWithFormat:@"%@",usernameReceived[indexPath.row]];
     if([statusReceived[indexPath.row] isEqualToString:@"pending"]){
         cell.statusImage.image = [UIImage imageNamed:@"pending.png"];
     }else if([statusReceived[indexPath.row] isEqualToString:@"approved"]){

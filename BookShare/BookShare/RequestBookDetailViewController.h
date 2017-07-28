@@ -16,6 +16,7 @@
 
 
 @property (strong, nonatomic) NSString *requestBookIsbn;
+@property (strong, nonatomic) NSString *requestBookId;
 
 - (IBAction)reqeustBook:(id)sender;
 

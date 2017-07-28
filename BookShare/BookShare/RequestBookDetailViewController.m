@@ -21,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"this is the isbn passed from booksAroundMe%@",_requestBookIsbn);
+    NSLog(@"this is the id passed from booksAroundMe%@",_requestBookId);
 
 
     
@@ -125,7 +126,7 @@
     
     
     [dicData setValue:@"4" forKey:@"fromUserId"];
-    [dicData setValue:@"50" forKey:@"requestorWantsBookId"];
+    [dicData setValue:_requestBookId forKey:@"requestorWantsBookId"];
 
     NSError *error;
     NSData *postData = [NSJSONSerialization

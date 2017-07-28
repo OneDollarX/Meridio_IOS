@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    fromUserId = @"123";
+    fromUserId = @"4";
     
     /**************************requests sent start***********************/
     

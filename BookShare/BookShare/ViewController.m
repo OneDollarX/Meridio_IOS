@@ -43,15 +43,7 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [locationManager startUpdatingLocation];
-    NSLog(@"here");
-    
-
-    
-    
-
-    
-    
-    
+ 
     
 }
 
