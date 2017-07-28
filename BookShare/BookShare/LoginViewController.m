@@ -26,6 +26,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    // Optional: Place the button in the center of your view.
+    loginButton.center = self.view.center;
+    loginButton.readPermissions =@[@"public_profile", @"email", @"user_friends"];
+    [self.view addSubview:loginButton];
+    
     
     // Handle clicks on the button
     [_facebookLoginButton
