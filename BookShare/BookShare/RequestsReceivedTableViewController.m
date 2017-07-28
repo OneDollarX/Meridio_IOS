@@ -92,6 +92,9 @@
                                             tradeId = [requestsReceivedJson valueForKeyPath:@"tradeRequests.id"];
                                             NSLog(@"%@",tradeId);
                                             
+                                            fromEmail = [requestsReceivedJson valueForKeyPath:@"tradeRequests.fromEmail"];
+                                            NSLog(@"%@",fromEmail);
+                                            
                                             
                                             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                                         });
@@ -162,7 +165,9 @@
     cell.acceptorWantsBook.text = [NSString stringWithFormat:@"%@",acceptorWantsBook[indexPath.row]];
     cell.requestorWantsBook.text = [NSString stringWithFormat:@"%@",requestorWantsBook[indexPath.row]];
     cell.statusReceived.text = statusReceived[indexPath.row];
-    cell.usernameReceived.text = [NSString stringWithFormat:@"%@",usernameReceived[indexPath.row]];
+    //cell.usernameReceived.text = [NSString stringWithFormat:@"%@",usernameReceived[indexPath.row]];
+    cell.usernameReceived.text = fromEmail[indexPath.row];
+    
     if([statusReceived[indexPath.row] isEqualToString:@"pending"]){
         cell.statusImage.image = [UIImage imageNamed:@"pending.png"];
     }else if([statusReceived[indexPath.row] isEqualToString:@"approved"]){

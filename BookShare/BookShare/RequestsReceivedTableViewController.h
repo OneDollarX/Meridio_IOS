@@ -15,6 +15,8 @@
     NSMutableArray *acceptorWantsBook;
     NSMutableArray *usernameReceived;
     NSMutableArray *statusReceived;
+    NSMutableArray *fromEmail;
+    
 }
 
 
