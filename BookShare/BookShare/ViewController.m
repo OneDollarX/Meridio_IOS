@@ -11,8 +11,15 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "LibraryTableViewController.h"
 #import "MyRequestsTableViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController ()
+@interface ViewController ()  <CLLocationManagerDelegate>{
+    
+    CLLocationManager *locationManager;
+    NSString *Lat;
+    NSString *Long;
+    
+}
 
 @end
 
@@ -25,6 +32,23 @@
     //self.navigationItem.hidesBackButton = YES;
     
     //NSLog(@"ViewController userid is %@",_userId);
+    
+    
+    //location
+    locationManager = [[CLLocationManager alloc] init];
+    
+    
+    //TODO: get current location
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
+    NSLog(@"here");
+    
+
+    
+    
+
     
     
     
@@ -52,4 +76,33 @@
 }
 
 
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    //NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        Long = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        Lat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        
+        
+        
+    }
+}
+
+
 @end
+
+
+
+

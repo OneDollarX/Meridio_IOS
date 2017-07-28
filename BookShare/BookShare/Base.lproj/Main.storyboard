@@ -802,6 +802,7 @@
                                     <outlet property="bookAroundMeId" destination="R8S-Z1-Sbr" id="eae-tX-ZGq"/>
                                     <outlet property="bookAroundMeImage" destination="aSz-Lk-hqp" id="isN-qw-hcH"/>
                                     <outlet property="bookAroundMeTitle" destination="eEW-Ym-Q5E" id="XTY-1D-nD3"/>
+                                    <segue destination="YWV-KK-q1H" kind="show" identifier="showRequestBookDetail" id="R6e-Iv-Dk7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -810,11 +811,109 @@
                             <outlet property="delegate" destination="ajm-p8-TU1" id="1Zp-Bj-Kk6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Books Around Me" id="DCD-QR-KSd"/>
+                    <navigationItem key="navigationItem" title="Books Around Me" id="DCD-QR-KSd">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="2Hd-Jz-1Ht">
+                            <connections>
+                                <segue destination="IGp-5d-YS3" kind="show" id="qsm-4S-Hr3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTm-tN-CVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7311" y="482"/>
+        </scene>
+        <!--Trade Book Detail-->
+        <scene sceneID="JFD-Ox-aCU">
+            <objects>
+                <viewController id="YWV-KK-q1H" customClass="RequestBookDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qIU-6r-psE"/>
+                        <viewControllerLayoutGuide type="bottom" id="aBG-0q-PfK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Znd-VQ-XMK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bookImagePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="OyQ-VA-aMo">
+                                <rect key="frame" x="97" y="73" width="126" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4B8-08-hvc">
+                                <rect key="frame" x="16" y="272" width="288" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCC-FY-p8P">
+                                <rect key="frame" x="16" y="342" width="288" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Descriptions" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6aC-OI-cFe">
+                                <rect key="frame" x="16" y="407" width="288" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Title : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhE-M9-NW7">
+                                <rect key="frame" x="16" y="246" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categories:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7C-Uj-mLT">
+                                <rect key="frame" x="16" y="311" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descriptions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WN-t5-Aw2">
+                                <rect key="frame" x="16" y="378" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dna-RY-RRz">
+                                <rect key="frame" x="0.0" y="518" width="160" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.30120933220000001" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="ouL-HK-pYE" kind="show" id="fJB-uN-bZY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ev-QT-qDQ">
+                                <rect key="frame" x="160" y="518" width="160" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.60399721750000002" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Request"/>
+                                <connections>
+                                    <action selector="postClicked:" destination="yZt-oO-NRO" eventType="touchUpInside" id="oxt-Hh-Jh5"/>
+                                    <action selector="reqeustBook:" destination="YWV-KK-q1H" eventType="touchUpInside" id="WIL-7j-gYM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Trade Book Detail" id="g5q-FH-Byi"/>
+                    <connections>
+                        <outlet property="requestBookCategories" destination="GCC-FY-p8P" id="i5j-j0-5eB"/>
+                        <outlet property="requestBookDescription" destination="6aC-OI-cFe" id="nkB-Kl-cux"/>
+                        <outlet property="requestBookImageView" destination="OyQ-VA-aMo" id="CSw-ff-qcn"/>
+                        <outlet property="requestBookTitle" destination="4B8-08-hvc" id="pXa-1j-hUD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5G-yC-tHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9401" y="482"/>
         </scene>
         <!--Book Details-->
         <scene sceneID="u11-aG-ioJ">
@@ -1005,6 +1104,24 @@
             </objects>
             <point key="canvasLocation" x="6549" y="482"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jZZ-WX-73N">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ke4-Wa-3Qs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FvR-Mp-ZhR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YWV-KK-q1H" kind="relationship" relationship="rootViewController" id="Y6A-PI-vT3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6el-MV-4F6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8468" y="482"/>
+        </scene>
     </scenes>
     <resources>
         <image name="SettingIcon" width="30" height="30"/>
@@ -1015,10 +1132,12 @@
         <image name="user" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="05p-Ug-APB"/>
-        <segue reference="0Mz-Ai-fck"/>
+        <segue reference="fJB-uN-bZY"/>
+        <segue reference="R6e-Iv-Dk7"/>
         <segue reference="y61-4T-V2B"/>
-        <segue reference="e02-Ha-Qqv"/>
+        <segue reference="0Mz-Ai-fck"/>
+        <segue reference="z0C-aA-nY4"/>
+        <segue reference="05p-Ug-APB"/>
         <segue reference="Ujy-ks-P2v"/>
         <segue reference="6cG-px-F2Z"/>
         <segue reference="Ctc-Ru-Z3Z"/>

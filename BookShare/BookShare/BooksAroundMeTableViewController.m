@@ -9,11 +9,12 @@
 #import "BooksAroundMeTableViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "BooksAroundMeTableViewCell.h"
-@interface BooksAroundMeTableViewController () <CLLocationManagerDelegate>{
-    CLLocationManager *locationManager;
+#import "RequestBookDetailViewController.h"
+@interface BooksAroundMeTableViewController (){
     NSString *currentLat;
     NSString *currentLong;
     NSString *userId;
+    NSString *selectedBookIsbn;
 }
 
 @end
@@ -21,7 +22,6 @@
 @implementation BooksAroundMeTableViewController
 
 - (void)viewDidLoad {
-    locationManager = [[CLLocationManager alloc] init];
     userId = @"4";
 
     /**************************booksaroundme start***********************/
@@ -79,19 +79,19 @@
                                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                             
                                             title = [json valueForKeyPath:@"books.title"];
-                                            NSLog(@"%@",title);
+                                            //NSLog(@"%@",title);
 
                                             imageURL = [json valueForKeyPath:@"books.image_url"];
-                                            NSLog(@"%@",imageURL);
+                                            //NSLog(@"%@",imageURL);
                                             
                                             bookId = [json valueForKeyPath:@"books.id"];
-                                            NSLog(@"%@",bookId);
+                                            //NSLog(@"%@",bookId);
                                             
                                             aroundMeUserId = [json valueForKeyPath:@"books.user_id"];
-                                            NSLog(@"%@",aroundMeUserId);
+                                            //NSLog(@"%@",aroundMeUserId);
                                             
                                             aroundMeBookIsbn = [json valueForKeyPath:@"books.isbn"];
-                                            NSLog(@"%@",aroundMeBookIsbn);
+                                            //NSLog(@"%@",aroundMeBookIsbn);
                                             
                                             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                                         });
@@ -141,29 +141,7 @@
 }
 
 
-#pragma mark - CLLocationManagerDelegate
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"didFailWithError: %@", error);
-    UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [errorAlert show];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
-    
-    if (currentLocation != nil) {
-        currentLong = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-        currentLat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-        
-        
-        
-    }
-}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -179,6 +157,8 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
     cell.bookAroundMeImage.image = image;
+    
+
     
     
     
@@ -223,14 +203,25 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    
+    if([[segue identifier] isEqualToString:@"showRequestBookDetail"]){
+        RequestBookDetailViewController *bookRequestDetailsView = [segue destinationViewController];
+        
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        
+        int row = (int) [myIndexPath row];
+        selectedBookIsbn = aroundMeBookIsbn[row];
+        bookRequestDetailsView.requestBookIsbn = selectedBookIsbn;
+        
+    }
 }
-*/
 
 @end

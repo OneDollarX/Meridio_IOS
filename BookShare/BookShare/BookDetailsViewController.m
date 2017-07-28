@@ -312,7 +312,7 @@
     if (currentLocation != nil) {
         currentLong = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         currentLat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-        NSLog(@"%@,%@",currentLat,currentLong);
+        //NSLog(@"%@,%@",currentLat,currentLong);
         
         
     }

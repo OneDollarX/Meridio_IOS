@@ -20,6 +20,7 @@
 		1B6CD4F61F202C4D00ED064D /* LibraryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4F51F202C4D00ED064D /* LibraryTableViewCell.m */; };
 		1B6CD4F91F20403900ED064D /* MyRequestsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4F81F20403900ED064D /* MyRequestsTableViewCell.m */; };
 		1B6CD4FC1F2040E900ED064D /* MyRequestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6CD4FB1F2040E900ED064D /* MyRequestsTableViewController.m */; };
+		1B7495271F2B846C009177A5 /* RequestBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7495261F2B846C009177A5 /* RequestBookDetailViewController.m */; };
 		1B7D44A41F1E6E500015EE1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44A31F1E6E500015EE1B /* main.m */; };
 		1B7D44A71F1E6E500015EE1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44A61F1E6E500015EE1B /* AppDelegate.m */; };
 		1B7D44AA1F1E6E500015EE1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D44A91F1E6E500015EE1B /* ViewController.m */; };
@@ -78,6 +79,8 @@
 		1B6CD4F81F20403900ED064D /* MyRequestsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRequestsTableViewCell.m; sourceTree = "<group>"; };
 		1B6CD4FA1F2040E900ED064D /* MyRequestsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRequestsTableViewController.h; sourceTree = "<group>"; };
 		1B6CD4FB1F2040E900ED064D /* MyRequestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRequestsTableViewController.m; sourceTree = "<group>"; };
+		1B7495251F2B846C009177A5 /* RequestBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBookDetailViewController.h; sourceTree = "<group>"; };
+		1B7495261F2B846C009177A5 /* RequestBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBookDetailViewController.m; sourceTree = "<group>"; };
 		1B7D449F1F1E6E500015EE1B /* BookShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7D44A31F1E6E500015EE1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B7D44A51F1E6E500015EE1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				1B7D44AB1F1E6E500015EE1B /* Main.storyboard */,
 				1B7D44A51F1E6E500015EE1B /* AppDelegate.h */,
 				1B7D44A61F1E6E500015EE1B /* AppDelegate.m */,
+				1B7495251F2B846C009177A5 /* RequestBookDetailViewController.h */,
+				1B7495261F2B846C009177A5 /* RequestBookDetailViewController.m */,
 				1BE387721F2907F4004CAFD5 /* TradeBookDetailsViewController.h */,
 				1BE387731F2907F4004CAFD5 /* TradeBookDetailsViewController.m */,
 				1BE3876F1F28F24F004CAFD5 /* UserLibraryTableViewController.h */,
@@ -393,6 +398,7 @@
 				1B6B8F451F2A225D00ED47F5 /* BooksAroundMeTableViewController.m in Sources */,
 				1B6B8F441F2A225D00ED47F5 /* BooksAroundMeTableViewCell.m in Sources */,
 				1B3610B51F1FE9AF0017A077 /* ScanViewController.m in Sources */,
+				1B7495271F2B846C009177A5 /* RequestBookDetailViewController.m in Sources */,
 				1B9422E01F27E7E900A928A3 /* RequestsReceivedTableViewController.m in Sources */,
 				1B9422E31F27E82D00A928A3 /* RequestsReceivedTableViewCell.m in Sources */,
 				1B7D44A71F1E6E500015EE1B /* AppDelegate.m in Sources */,
