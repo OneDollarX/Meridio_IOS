@@ -10,3 +10,4 @@ share userId among all the views <br />
 popover menu <br />
 setUserSession duplicate? <br />
 booksAroundMe hardCode location <br />
+log out ? <br />
