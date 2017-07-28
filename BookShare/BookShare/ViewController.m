@@ -12,6 +12,7 @@
 #import "LibraryTableViewController.h"
 #import "MyRequestsTableViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "BooksAroundMeTableViewController.h"
 
 @interface ViewController ()  <CLLocationManagerDelegate>{
     
@@ -63,10 +64,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-
     
-}
+    //[locationManager stopUpdatingLocation];
+    
+    if([[segue identifier] isEqualToString:@"showBooksAroundMe"]){
+        BooksAroundMeTableViewController *bookAroundMeView = [segue destinationViewController];
+        
+        bookAroundMeView.passingLat = Lat;
+        bookAroundMeView.passingLong = Long;
 
+        
+    }
+}
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -86,6 +95,7 @@
     if (currentLocation != nil) {
         Long = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         Lat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        NSLog(@"%@,%@",Long,Lat);
         
         
         

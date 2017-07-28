@@ -15,7 +15,13 @@
     NSMutableArray *aroundMeUserId;
     NSMutableArray *aroundMeBookIsbn;
     
+    
+    
+
 }
 
+
+@property (strong, nonatomic) NSString *passingLat;
+@property (strong, nonatomic) NSString *passingLong;
 
 @end

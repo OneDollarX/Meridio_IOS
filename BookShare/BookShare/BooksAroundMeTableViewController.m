@@ -23,6 +23,12 @@
 
 - (void)viewDidLoad {
     userId = @"4";
+    //currentLat = @"40.43140843";
+    //currentLong = @"-79.92909952";
+    
+    currentLat = _passingLat;
+    currentLong = _passingLong;
+    NSLog(@"passing long %@,passing lat %@",_passingLong,_passingLat);
 
     /**************************booksaroundme start***********************/
     
@@ -46,8 +52,8 @@
     
     NSMutableDictionary *dicData = [[NSMutableDictionary
                                      alloc]init];
-    [dicData setValue:@"40.43140843" forKey:@"latitude"];
-    [dicData setValue:@"-79.92909952" forKey:@"longitude"];
+    [dicData setValue:currentLat forKey:@"latitude"];
+    [dicData setValue:currentLong forKey:@"longitude"];
     [dicData setValue:userId forKey:@"userId"];
     
     NSError *error;
