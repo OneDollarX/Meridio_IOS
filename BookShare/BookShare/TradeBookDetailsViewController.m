@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationItem.backBarButtonItem setTitle:@""];
 
     self.tradeBookTitleLabel.text = _tradeBookTitle;
     self.tradeBookGenreLabel.text = _tradeBookGenre;

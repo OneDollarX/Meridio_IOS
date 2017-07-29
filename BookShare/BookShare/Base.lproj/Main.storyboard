@@ -88,7 +88,7 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="BookShare" id="Yx0-ib-RNq">
-                        <barButtonItem key="rightBarButtonItem" image="SettingIcon" id="64L-eT-ipK">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="64L-eT-ipK">
                             <connections>
                                 <action selector="SettingClicked:" destination="BYZ-38-t0r" id="FCL-O2-JfU"/>
                             </connections>
@@ -840,7 +840,7 @@
             </objects>
             <point key="canvasLocation" x="7310.625" y="481.6901408450704"/>
         </scene>
-        <!--Trade Book Detail-->
+        <!--Request Book Detail View Controller-->
         <scene sceneID="JFD-Ox-aCU">
             <objects>
                 <viewController id="YWV-KK-q1H" customClass="RequestBookDetailViewController" sceneMemberID="viewController">
@@ -914,7 +914,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Trade Book Detail" id="g5q-FH-Byi"/>
+                    <navigationItem key="navigationItem" id="g5q-FH-Byi"/>
                     <connections>
                         <outlet property="requestBookCategories" destination="GCC-FY-p8P" id="i5j-j0-5eB"/>
                         <outlet property="requestBookDescription" destination="6aC-OI-cFe" id="nkB-Kl-cux"/>
@@ -1141,19 +1141,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SettingIcon" width="30" height="30"/>
         <image name="bookImagePlaceHolder" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6cG-px-F2Z"/>
-        <segue reference="N8O-Lq-fPS"/>
-        <segue reference="Ctc-Ru-Z3Z"/>
-        <segue reference="ExU-p1-fqA"/>
-        <segue reference="R6e-Iv-Dk7"/>
-        <segue reference="0qe-DX-KLv"/>
+        <segue reference="Ujy-ks-P2v"/>
+        <segue reference="e02-Ha-Qqv"/>
+        <segue reference="yR9-du-3AP"/>
         <segue reference="HDb-qL-hvr"/>
+        <segue reference="Ctc-Ru-Z3Z"/>
         <segue reference="y61-4T-V2B"/>
         <segue reference="0Mz-Ai-fck"/>
         <segue reference="05p-Ug-APB"/>
+        <segue reference="Y6A-PI-vT3"/>
     </inferredMetricsTieBreakers>
 </document>

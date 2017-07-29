@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     userId = @"4";
     self.view.backgroundColor = [UIColor darkGrayColor];
+    [self.navigationItem.backBarButtonItem setTitle:@""];
     //currentLat = @"40.43140843";
     //currentLong = @"-79.92909952";
     
