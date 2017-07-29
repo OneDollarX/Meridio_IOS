@@ -7,6 +7,10 @@
 //
 
 #import "TradeBookDetailsViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface TradeBookDetailsViewController ()
 
@@ -127,6 +131,42 @@
     [dataTask resume];
     
     /****************************updateTradeRequest end*********************/
+    
+    
+    /******************************alert start*****************************/
+    
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Success"
+                                                                  message:@""
+                                                           preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* goButton = [UIAlertAction actionWithTitle:@"Go to Main Page"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * action)
+    {
+        
+        // call method whatever u need
+        [self performSegueWithIdentifier:@"acceptBookSuccess" sender:nil];
+    }];
+    
+    UIAlertAction* postButton = [UIAlertAction actionWithTitle:@"Post to Facebook"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action)
+    {
+
+        // call method whatever u need
+        
+
+
+        
+    }];
+    
+    [alert addAction:goButton];
+    [alert addAction:postButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    /******************************alert end ******************************/
     
     
     

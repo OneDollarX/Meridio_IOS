@@ -26,12 +26,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    // Optional: Place the button in the center of your view.
-    loginButton.center = self.view.center;
-    loginButton.readPermissions =@[@"public_profile", @"email", @"user_friends"];
-    [self.view addSubview:loginButton];
+//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    // Optional: Place the button in the center of your view.
+//    loginButton.center = self.view.center;
+//    loginButton.readPermissions =@[@"public_profile", @"email", @"user_friends"];
+//    [self.view addSubview:loginButton];
     
+    if ([FBSDKAccessToken currentAccessToken]) {
+        NSLog(@"yes");
+
+        
+        [self performSegueWithIdentifier:@"login" sender:nil];
+        
+    }
     
     // Handle clicks on the button
     [_facebookLoginButton
@@ -71,6 +78,7 @@
              NSLog(@"Logged in");
              //[_facebookLoginButton setTitle:@"facebook logged in" forState:UIControlStateNormal];
              accessToken = [FBSDKAccessToken currentAccessToken].tokenString;
+             
              NSLog(@"%@",accessToken);
   
              

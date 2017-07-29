@@ -179,5 +179,30 @@
     
     
     /**************************Create Request End***********************/
+    
+    /******************************alert start*****************************/
+    
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Success"
+                                                                  message:@""
+                                                           preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* goButton = [UIAlertAction actionWithTitle:@"Go to Main Page"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action)
+                               {
+                                   
+                                   // call method whatever u need
+                                   [self performSegueWithIdentifier:@"requestMain" sender:nil];
+                               }];
+    
+
+    
+    [alert addAction:goButton];
+
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    /******************************alert end ******************************/
 }
 @end

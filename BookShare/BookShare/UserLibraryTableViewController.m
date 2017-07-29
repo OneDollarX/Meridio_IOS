@@ -22,10 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor darkGrayColor];
     NSLog(@"this is the passing value userId =%@",_receivedUserId);
     //userId = @"4";
     userId = _receivedUserId;
     tradeId = _receivedTradeId;
+    
     
     /**************************getUserbooks start***********************/
     
@@ -149,6 +151,7 @@
     UserLibarayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserLibraryCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.userLibraryBookId.hidden = YES;
     
     
     cell.userLibraryBookTitle.text = title[indexPath.row];

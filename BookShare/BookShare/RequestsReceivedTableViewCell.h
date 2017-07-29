@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *statusReceived;
 
 @property (strong, nonatomic) IBOutlet UIImageView *statusImage;
+@property (strong, nonatomic) IBOutlet UILabel *acceptTitle;
 
 @end

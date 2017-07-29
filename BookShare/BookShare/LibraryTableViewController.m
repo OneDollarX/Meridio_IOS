@@ -20,6 +20,8 @@
 @implementation LibraryTableViewController
 
 - (void)viewDidLoad {
+    
+    self.view.backgroundColor = [UIColor darkGrayColor];
 
 
     userId = @"4";
@@ -158,7 +160,7 @@
     
     // Configure the cell...
 
-    
+    cell.bookLibraryId.hidden = YES;
     cell.bookLibraryTitle.text = title[indexPath.row];
     cell.bookLibraryCategories.text = categories[indexPath.row];
     cell.bookLibraryId.text = [NSString stringWithFormat:@"%@",bookId[indexPath.row]];
@@ -198,6 +200,7 @@
         
         NSLog(@"%@",bookId[indexPath.row]);
         [self deleteBook:bookId[indexPath.row]];
+        [self viewDidLoad];
         
         
         

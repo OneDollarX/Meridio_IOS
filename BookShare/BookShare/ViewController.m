@@ -13,8 +13,9 @@
 #import "MyRequestsTableViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "BooksAroundMeTableViewController.h"
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
-@interface ViewController ()  <CLLocationManagerDelegate>{
+@interface ViewController ()  <CLLocationManagerDelegate,FBSDKSharingDelegate>{
     
     CLLocationManager *locationManager;
     NSString *Lat;
@@ -44,7 +45,25 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [locationManager startUpdatingLocation];
- 
+    
+    self.aroundMeButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.aroundMeButton.titleLabel.numberOfLines = 2;
+    
+    
+    
+//    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+//    content.contentURL = [NSURL
+//                          URLWithString:@"https://www.facebook.com/FacebookDevelopers"];
+//    FBSDKShareButton *shareButton = [[FBSDKShareButton alloc] init];
+//    shareButton.shareContent = content;
+//    shareButton.center = self.view.center;
+//    [self.view addSubview:shareButton];
+    
+
+
+    
+
+
     
 }
 
@@ -56,7 +75,17 @@
 
 
 - (IBAction)SettingClicked:(id)sender {
+    
+    
 }
+
+- (IBAction)logOut:(id)sender {
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+    [loginManager logOut];
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+}
+
+
 
 #pragma mark - Navigation
 
@@ -100,6 +129,27 @@
         
         
     }
+}
+
+#pragma mark === delegate method
+- (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results
+{
+    NSLog(@"completed share:%@", results);
+}
+
+- (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error
+{
+    NSLog(@"sharing error:%@", error);
+    NSString *message = error.userInfo[FBSDKErrorLocalizedDescriptionKey] ?:
+    @"There was a problem sharing, please try again later.";
+    NSString *title = error.userInfo[FBSDKErrorLocalizedTitleKey] ?: @"Oops!";
+    
+    [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
+- (void)sharerDidCancel:(id<FBSDKSharing>)sharer
+{
+    NSLog(@"share cancelled");
 }
 
 

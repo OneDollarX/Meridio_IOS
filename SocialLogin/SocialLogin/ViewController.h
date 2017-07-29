@@ -2,24 +2,17 @@
 //  ViewController.h
 //  SocialLogin
 //
-//  Created by YILUN XU on 7/11/17.
+//  Created by YILUN XU on 7/29/17.
 //  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <Social/Social.h>
-#import <Accounts/Accounts.h>
 
 @interface ViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIButton *facebookLoginButton;
-@property (strong, nonatomic) IBOutlet UILabel *facebookName;
-@property (strong, nonatomic) IBOutlet UILabel *facebookEmail;
-@property (nonatomic, strong) NSMutableData *responseDataEmail;
-@property (nonatomic, strong) NSMutableData *responseDataName;
 
-@property (strong, nonatomic) IBOutlet UIButton *post;
+
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 
 @end
-

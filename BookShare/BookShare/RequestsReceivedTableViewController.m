@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor darkGrayColor];
     
     toUserId = @"4";
     
@@ -162,6 +163,8 @@
     RequestsReceivedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RequestsReceivedCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.acceptTitle.hidden = YES;
+    cell.acceptorWantsBook.hidden = YES;
     cell.acceptorWantsBook.text = [NSString stringWithFormat:@"%@",acceptorWantsBook[indexPath.row]];
     cell.requestorWantsBook.text = [NSString stringWithFormat:@"%@",requestorWantsBook[indexPath.row]];
     cell.statusReceived.text = statusReceived[indexPath.row];
@@ -172,6 +175,8 @@
         cell.statusImage.image = [UIImage imageNamed:@"pending.png"];
     }else if([statusReceived[indexPath.row] isEqualToString:@"approved"]){
         cell.statusImage.image = [UIImage imageNamed:@"success.png"];
+        cell.acceptTitle.hidden = NO;
+        cell.acceptorWantsBook.hidden = NO;
         
     }else{
         cell.statusImage.image = [UIImage imageNamed:@"decline.png"];

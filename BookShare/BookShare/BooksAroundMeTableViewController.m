@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     userId = @"4";
+    self.view.backgroundColor = [UIColor darkGrayColor];
     //currentLat = @"40.43140843";
     //currentLong = @"-79.92909952";
     
@@ -154,6 +155,7 @@
     BooksAroundMeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookAroundMeCell" forIndexPath:indexPath];
     
      // Configure the cell...
+    cell.bookAroundMeId.hidden = YES;
     
     cell.bookAroundMeTitle.text = title[indexPath.row];
     //NSLog(@"%@",bookId[indexPath.row]);

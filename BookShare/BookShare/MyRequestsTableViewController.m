@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor darkGrayColor];
     fromUserId = @"4";
     
     /**************************requests sent start***********************/
@@ -150,7 +151,7 @@
     
     // Configure the cell...
     cell.myRequestsBookTitle.text = title[indexPath.row];
-    cell.myRequestsToUsername.text = [NSString stringWithFormat:@"%@",user[indexPath.row]];
+    //cell.myRequestsToUsername.text = [NSString stringWithFormat:@"%@",user[indexPath.row]];
     cell.myRequestsStatus.text = status[indexPath.row];
     if([status[indexPath.row] isEqualToString:@"pending"]){
         cell.statusImage.image = [UIImage imageNamed:@"pending.png"];
@@ -163,7 +164,7 @@
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURL[indexPath.row]]];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
-    cell.myRequestsImageView.image = image;
+    //cell.myRequestsImageView.image = image;
     return cell;
 }
 

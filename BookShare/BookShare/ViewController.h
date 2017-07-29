@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    SLComposeViewController *slComposer;
+}
 
+@property (strong, nonatomic) IBOutlet UIButton *aroundMeButton;
 
 //passing varibales
 @property (nonatomic) NSString *username;
@@ -20,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingBtn;
 - (IBAction)SettingClicked:(id)sender;
 
+- (IBAction)logOut:(id)sender;
 
 @end
 
