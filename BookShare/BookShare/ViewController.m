@@ -14,12 +14,15 @@
 #import <CoreLocation/CoreLocation.h>
 #import "BooksAroundMeTableViewController.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
+#import "constant.h"
 
 @interface ViewController ()  <CLLocationManagerDelegate,FBSDKSharingDelegate>{
     
     CLLocationManager *locationManager;
     NSString *Lat;
     NSString *Long;
+    
+    
     
 }
 
@@ -29,6 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //NSLog(@"%@",USER_ID);
+
     self.btnLogOut.enabled = NO;
     self.btnLogOut.hidden = YES;
     self.btnRequestSent.enabled = NO;
@@ -223,9 +229,9 @@
     CLLocation *currentLocation = newLocation;
     
     if (currentLocation != nil) {
-        Long = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-        Lat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-        //NSLog(@"%@,%@",Long,Lat);
+        Long = [NSString stringWithFormat:@"%.10f", currentLocation.coordinate.longitude];
+        Lat = [NSString stringWithFormat:@"%.10f", currentLocation.coordinate.latitude];
+        NSLog(@"%@,%@",Long,Lat);
         
         
         

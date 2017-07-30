@@ -42,7 +42,7 @@
     //location
     locationManager = [[CLLocationManager alloc] init];
     
-    userId = @"4";
+    userId = @"1";
     
     //TODO: get current location
     locationManager.delegate = self;

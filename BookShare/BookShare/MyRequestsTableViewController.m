@@ -24,7 +24,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor darkGrayColor];
     self.navigationItem.hidesBackButton = YES;
-    fromUserId = @"4";
+    fromUserId = @"1";
     
     
     UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];

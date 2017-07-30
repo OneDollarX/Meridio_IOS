@@ -25,7 +25,6 @@
     self.view.backgroundColor = [UIColor darkGrayColor];
     [self.navigationController setToolbarHidden:YES];
     NSLog(@"this is the passing value userId =%@",_receivedUserId);
-    //userId = @"4";
     userId = _receivedUserId;
     tradeId = _receivedTradeId;
     

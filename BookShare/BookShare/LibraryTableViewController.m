@@ -27,7 +27,7 @@
     self.navigationItem.hidesBackButton = YES;
 
 
-    userId = @"4";
+    userId = @"1";
     
     
     UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
@@ -150,6 +150,7 @@
 
                                             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                                         });
+                                        NSLog(@"here !!!!!!!!!!!!!");
                                         
                                         
                                         

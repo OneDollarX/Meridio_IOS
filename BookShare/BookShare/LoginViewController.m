@@ -10,6 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ViewController.h"
+#import "constant.h"
 
 @interface LoginViewController () {
     FBSDKAccessToken *accessToken;
@@ -24,6 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.navigationController setToolbarHidden:YES];
+
     // Do any additional setup after loading the view.
     
 //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
@@ -162,7 +166,10 @@
                             
                             NSString *sessionStatus = [json valueForKeyPath:@"status"];
                             NSString *sessionUserId = [json valueForKeyPath:@"userId"];
-                            sessionUserId = userId;
+                            NSLog(@"session UserId = %@",sessionUserId);
+                            userId = sessionUserId;
+                            //NSString *const USER_ID = sessionUserId;
+                            
                             NSLog(@"userid is  %@",sessionUserId);
                             NSLog(@"status is  %@",sessionStatus);
                                                  
@@ -219,7 +226,7 @@
         ViewController *view = [segue destinationViewController];
         view.username = [NSString stringWithFormat:@"%@",name];
         view.emailAddress = [NSString stringWithFormat:@"%@",email];
-        //view.userId = [NSString stringWithFormat:@"%@",userId];
+        view.userId = [NSString stringWithFormat:@"%@",userId];
 
     }
 }

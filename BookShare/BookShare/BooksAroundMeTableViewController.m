@@ -88,19 +88,19 @@
                                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                             
                                             title = [json valueForKeyPath:@"books.title"];
-                                            //NSLog(@"%@",title);
+                                            NSLog(@"%@",title);
 
                                             imageURL = [json valueForKeyPath:@"books.image_url"];
-                                            //NSLog(@"%@",imageURL);
+                                            NSLog(@"%@",imageURL);
                                             
                                             bookId = [json valueForKeyPath:@"books.id"];
                                             NSLog(@"%@",bookId);
                                             
                                             aroundMeUserId = [json valueForKeyPath:@"books.user_id"];
-                                            //NSLog(@"%@",aroundMeUserId);
+                                            NSLog(@"%@",aroundMeUserId);
                                             
                                             aroundMeBookIsbn = [json valueForKeyPath:@"books.isbn"];
-                                            //NSLog(@"%@",aroundMeBookIsbn);
+                                            NSLog(@"%@",aroundMeBookIsbn);
                                             
                                             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                                         });

@@ -7,8 +7,12 @@
 //
 
 #import "RequestBookDetailViewController.h"
+#import "LibraryTableViewCell.h"
+#import "LibraryTableViewController.h"
 
-@interface RequestBookDetailViewController ()
+@interface RequestBookDetailViewController () {
+    NSString * fromUserId;
+}
 
 
 
@@ -18,7 +22,18 @@
 
 
 - (void)viewDidLoad {
+    fromUserId = @"1";
     [super viewDidLoad];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LibraryTableViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"checkLibrary"];
+    
+//    NSInteger a = controller.tableView.numberOfSections;
+//    NSLog(@"%li",(long)a);
+//    //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+
+    
+    
+    
     // Do any additional setup after loading the view.
     NSLog(@"this is the isbn passed from booksAroundMe%@",_requestBookIsbn);
     NSLog(@"this is the id passed from booksAroundMe%@",_requestBookId);
@@ -99,6 +114,9 @@
 */
 
 - (IBAction)reqeustBook:(id)sender {
+    
+    
+    
     /**************************Create Request Start***********************/
     
     
@@ -125,7 +143,7 @@
     
     
     
-    [dicData setValue:@"4" forKey:@"fromUserId"];
+    [dicData setValue:fromUserId forKey:@"fromUserId"];
     [dicData setValue:_requestBookId forKey:@"requestorWantsBookId"];
 
     NSError *error;
