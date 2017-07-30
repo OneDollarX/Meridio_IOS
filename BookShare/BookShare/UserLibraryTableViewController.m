@@ -229,6 +229,8 @@
         tradeBookDetailView.tradeBookDescription = bookDescription[row];
         tradeBookDetailView.tradeBookId = bookId[row];
         tradeBookDetailView.tradeId = tradeId;
+        tradeBookDetailView.tradeEmail = _receivedEmail;
+        
 
     }
     

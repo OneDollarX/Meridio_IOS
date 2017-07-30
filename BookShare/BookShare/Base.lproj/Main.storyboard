@@ -87,20 +87,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="BookShare" id="Yx0-ib-RNq">
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="64L-eT-ipK">
-                            <connections>
-                                <action selector="SettingClicked:" destination="BYZ-38-t0r" id="FCL-O2-JfU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="BookShare" id="Yx0-ib-RNq"/>
                     <connections>
                         <outlet property="aroundMeButton" destination="nxm-np-0Ma" id="9mB-to-fdA"/>
                         <outlet property="btnLibrary" destination="GZe-DI-zNR" id="Rco-tV-7cZ"/>
                         <outlet property="btnLogOut" destination="h50-73-ibP" id="egU-1c-tJq"/>
                         <outlet property="btnRequestReceived" destination="kWa-dJ-DJC" id="SnQ-Mv-DIA"/>
                         <outlet property="btnRequestSent" destination="Okt-6D-cOW" id="8fQ-Vd-lH0"/>
-                        <outlet property="settingBtn" destination="64L-eT-ipK" id="u66-e1-XF7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -921,12 +914,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="g5q-FH-Byi"/>
                     <connections>
+                        <outlet property="requestBookBtn" destination="7ev-QT-qDQ" id="q5U-Sb-DDK"/>
                         <outlet property="requestBookCategories" destination="GCC-FY-p8P" id="i5j-j0-5eB"/>
                         <outlet property="requestBookDescription" destination="6aC-OI-cFe" id="nkB-Kl-cux"/>
                         <outlet property="requestBookImageView" destination="OyQ-VA-aMo" id="CSw-ff-qcn"/>
                         <outlet property="requestBookTitle" destination="4B8-08-hvc" id="pXa-1j-hUD"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="requestMain" id="0qe-DX-KLv"/>
                         <segue destination="ajm-p8-TU1" kind="show" identifier="requestMore" id="ExU-p1-fqA"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="noBookInLibrary" id="Saw-FQ-pz0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5G-yC-tHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1151,15 +1146,15 @@
     <inferredMetricsTieBreakers>
         <segue reference="Pc5-xx-kdb"/>
         <segue reference="9EB-O9-Qyl"/>
-        <segue reference="J9Q-bj-RuQ"/>
+        <segue reference="RW4-Jf-C7f"/>
         <segue reference="y61-4T-V2B"/>
-        <segue reference="0Mz-Ai-fck"/>
-        <segue reference="Y6A-PI-vT3"/>
-        <segue reference="0qe-DX-KLv"/>
+        <segue reference="XWz-dV-WGs"/>
+        <segue reference="R6e-Iv-Dk7"/>
         <segue reference="ExU-p1-fqA"/>
-        <segue reference="HDb-qL-hvr"/>
         <segue reference="hGG-KG-OLR"/>
         <segue reference="Ctc-Ru-Z3Z"/>
-        <segue reference="N8O-Lq-fPS"/>
+        <segue reference="YdC-ni-7Zy"/>
+        <segue reference="5CM-DN-zgf"/>
+        <segue reference="Ujy-ks-P2v"/>
     </inferredMetricsTieBreakers>
 </document>

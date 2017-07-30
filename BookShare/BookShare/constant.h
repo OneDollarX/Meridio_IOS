@@ -10,6 +10,6 @@
 #define constant_h
 
 
-extern NSString *const USER_ID;
+static NSString *const USER_ID;
 
 #endif /* constant_h */

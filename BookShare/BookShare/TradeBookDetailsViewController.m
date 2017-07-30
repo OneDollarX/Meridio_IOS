@@ -11,6 +11,8 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
 @interface TradeBookDetailsViewController ()
 
@@ -137,7 +139,7 @@
     /******************************alert start*****************************/
     
     UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Success"
-                                                                  message:@""
+                                                                  message:[NSString stringWithFormat:@"Now you can contact %@ to get your book!",_tradeEmail]
                                                            preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* goButton = [UIAlertAction actionWithTitle:@"Go to Main Page"
@@ -157,6 +159,15 @@
         // call method whatever u need
         
         /*********************************share test ***************************/
+        
+        
+//        slComposer = [[SLComposeViewController alloc] init];
+//        slComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+//        [slComposer setInitialText:[NSString stringWithFormat:@"%@ - Download our app", self.label.text]];
+//        [slComposer addImage:self.imageView.image];
+//        [self presentViewController:slComposer animated:YES completion:nil];
+        
+        
         
         if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
             

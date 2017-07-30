@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RequestBookDetailViewController : UIViewController
+@interface RequestBookDetailViewController : UIViewController {
+    NSMutableArray *title;
+}
 @property (strong, nonatomic) IBOutlet UIImageView *requestBookImageView;
 @property (strong, nonatomic) IBOutlet UILabel *requestBookTitle;
 @property (strong, nonatomic) IBOutlet UILabel *requestBookCategories;
@@ -19,5 +21,6 @@
 @property (strong, nonatomic) NSString *requestBookId;
 
 - (IBAction)reqeustBook:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *requestBookBtn;
 
 @end

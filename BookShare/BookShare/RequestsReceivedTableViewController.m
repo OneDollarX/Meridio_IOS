@@ -336,6 +336,7 @@
         
         userLibraryView.receivedUserId = usernameReceived[row];
         userLibraryView.receivedTradeId = tradeId[row];
+        userLibraryView.receivedEmail = fromEmail[row];
     }
     
     

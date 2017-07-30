@@ -168,7 +168,8 @@
                             NSString *sessionUserId = [json valueForKeyPath:@"userId"];
                             NSLog(@"session UserId = %@",sessionUserId);
                             userId = sessionUserId;
-                            //NSString *const USER_ID = sessionUserId;
+                            NSString *const USER_ID = sessionUserId;
+                            NSLog(@"constantttttttttttt   %@",USER_ID);
                             
                             NSLog(@"userid is  %@",sessionUserId);
                             NSLog(@"status is  %@",sessionStatus);
@@ -196,7 +197,9 @@
              
              
             /**************************NAVIGATION To MAINPAGE***********************/
-            [self performSegueWithIdentifier:@"login" sender:nil];
+            
+             
+             [self performSegueWithIdentifier:@"login" sender:nil];
              
 
              

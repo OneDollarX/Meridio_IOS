@@ -24,12 +24,130 @@
 - (void)viewDidLoad {
     fromUserId = @"1";
     [super viewDidLoad];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LibraryTableViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"checkLibrary"];
+    _requestBookBtn.enabled = NO;
     
-//    NSInteger a = controller.tableView.numberOfSections;
-//    NSLog(@"%li",(long)a);
-//    //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+    
+/***************************************check library book nums************************/
+    
+    
+    
+    // Setup the session
+    NSURLSessionConfiguration * configuration =
+    [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * session = [NSURLSession
+                              sessionWithConfiguration:configuration];
+    NSString *urlString = [NSString stringWithFormat:@"http://ec2-54-85-207-189.compute-1.amazonaws.com:4000/getMyBooks"];
+    // create HttpURLrequest
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest
+                                    requestWithURL:url
+                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                    timeoutInterval:60.0];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPMethod:@"POST"];
+    
+    
+    
+    NSMutableDictionary *dicData = [[NSMutableDictionary
+                                     alloc]init];
+    [dicData setValue:fromUserId forKey:@"userId"];
+    
+    NSError *error;
+    NSData *postData = [NSJSONSerialization
+                        dataWithJSONObject:dicData options:0 error:&error];
+    [request setHTTPBody:postData];
+    NSLog(@"here");
+    
+    
+    
+    // Create a data task to transfer the web service endpoint contents
+    NSURLSessionUploadTask * dataTask
+    = [session uploadTaskWithRequest:request
+                            fromData:postData completionHandler:^(NSData *data,
+                                                                  NSURLResponse *response, NSError *error) {
+                                
+                                
+                                
+                                if (!error) {
+                                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*) response;
+                                    NSLog(@"%li",(long)httpResponse.statusCode);
+                                    if (httpResponse.statusCode == 200) {
+                                        
+                                        
+                                        NSDictionary *infoJson = [NSJSONSerialization
+                                                    JSONObjectWithData:data
+                                                    options:kNilOptions
+                                                    error:&error];
+                                        for(NSString *key in [infoJson allKeys]) {
+                                            NSLog(@"%@",[infoJson objectForKey:key]);
+                                        }
+                                        [super viewDidLoad];
+                                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                                            title = [infoJson valueForKeyPath:@"books.title"];
+                                            NSLog(@"%@",title);
+                                            
+                                            if(title.count == 0){
+                                                NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                                                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                                               message:@"There are no books in your library to trade. Please post a book first!"
+                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                                                      handler:^(UIAlertAction * action) {
+                                                                      
+                                                                        [self performSegueWithIdentifier:@"noBookInLibrary" sender:nil];                              
+                                                                                                      }];
+                                                
+                                                [alert addAction:defaultAction];
+                                                
+
+                                                [self presentViewController:alert animated:YES completion:nil];
+                                                
+                                                
+                                            }else{
+                                                NSLog(@"?????????????????????????????");
+                                                _requestBookBtn.enabled = YES;
+                                            }
+
+                                            
+                                        });
+
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    }else{
+                                        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                                       message:@"Something is wrong with the server. Plsese check!"
+                                                                                                preferredStyle:UIAlertControllerStyleAlert];
+                                        
+                                        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                                              handler:^(UIAlertAction * action) {}];
+                                        
+                                        [alert addAction:defaultAction];
+                                        [self presentViewController:alert animated:YES completion:nil];
+                                    }
+                                }
+                                
+                            }];
+    
+    [dataTask resume];
+    
+    
+
+    
+    
+    
+    
+    /***************************************check library book nums************************/
+    
+    
+
 
     
     
@@ -88,8 +206,8 @@
     //image
     NSArray *bookImageLinks = [resultBook valueForKeyPath:@"items.volumeInfo.imageLinks.smallThumbnail"];
     NSLog(@"%@",bookImageLinks[0]);
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",bookImageLinks[0]]];
-    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSURL *url1 = [NSURL URLWithString:[NSString stringWithFormat:@"%@",bookImageLinks[0]]];
+    NSData *data = [NSData dataWithContentsOfURL:url1];
     UIImage *image = [UIImage imageWithData:data];
     [self.requestBookImageView setImage:image];
     

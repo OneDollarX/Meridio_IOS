@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 
-@interface TradeBookDetailsViewController : UIViewController
+@interface TradeBookDetailsViewController : UIViewController {
+    SLComposeViewController *slComposer;
+}
+
+
 
 @property (strong, nonatomic) NSString *tradeBookTitle;
 @property (strong, nonatomic) NSString *tradeBookGenre;
@@ -16,6 +22,7 @@
 @property (strong, nonatomic) NSString *tradeBookDescription;
 @property (strong, nonatomic) NSString *tradeBookId;
 @property (strong, nonatomic) NSString *tradeId;
+@property (strong, nonatomic) NSString *tradeEmail;
 
 
 @property (strong, nonatomic) IBOutlet UIImageView *tradeBookImage;
