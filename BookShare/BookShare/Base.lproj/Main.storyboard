@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzM-16-VM7">
-                                <rect key="frame" x="18" y="141" width="284" height="138"/>
+                                <rect key="frame" x="18" y="99" width="284" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="33"/>
                                 <state key="normal" title="POST BOOK">
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxm-np-0Ma">
-                                <rect key="frame" x="20" y="317" width="284" height="193"/>
+                                <rect key="frame" x="20" y="252" width="284" height="193"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="40"/>
                                 <state key="normal" title="FIND BOOKS AROUND ME">
@@ -50,7 +50,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="WBO-z2-qsK" kind="show" id="hkF-o9-tev"/>
+                                    <segue destination="WBO-z2-qsK" kind="show" identifier="ToLibrary" id="hkF-o9-tev"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okt-6D-cOW">
@@ -60,7 +60,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ls4-GR-XK4" kind="show" id="UKI-F0-rCe"/>
+                                    <segue destination="Ls4-GR-XK4" kind="show" identifier="ToRequestSent" id="UKI-F0-rCe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-dJ-DJC">
@@ -70,7 +70,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="diw-rB-nyK" kind="show" id="Ujy-ks-P2v"/>
+                                    <segue destination="diw-rB-nyK" kind="show" identifier="ToRequestReceived" id="Ujy-ks-P2v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h50-73-ibP">
@@ -81,7 +81,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IiM-vg-rSD"/>
-                                    <segue destination="tmU-SF-iAy" kind="show" id="HDb-qL-hvr"/>
+                                    <segue destination="tmU-SF-iAy" kind="showDetail" identifier="ToLogIn" action="showViewController:sender:" id="HDb-qL-hvr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,6 +96,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="aroundMeButton" destination="nxm-np-0Ma" id="9mB-to-fdA"/>
+                        <outlet property="btnLibrary" destination="GZe-DI-zNR" id="Rco-tV-7cZ"/>
+                        <outlet property="btnLogOut" destination="h50-73-ibP" id="egU-1c-tJq"/>
+                        <outlet property="btnRequestReceived" destination="kWa-dJ-DJC" id="SnQ-Mv-DIA"/>
+                        <outlet property="btnRequestSent" destination="Okt-6D-cOW" id="8fQ-Vd-lH0"/>
                         <outlet property="settingBtn" destination="64L-eT-ipK" id="u66-e1-XF7"/>
                     </connections>
                 </viewController>
@@ -169,7 +173,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="obQ-pN-TeS" id="t0i-a2-U3F">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-z5-Nds">
@@ -243,7 +247,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uUZ-b9-5OR" id="Eia-Sw-iGz">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BookTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJs-FF-AW0">
@@ -327,7 +331,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1VT-wF-osc" id="FD2-H3-SHQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="120.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="acceptorWantsBook" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="3Uj-pe-2O9">
@@ -427,7 +431,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ai7-1S-fEn" id="wEX-6x-xfk">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hG1-oX-Ucu">
@@ -791,7 +795,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wa8-Ci-7Bw" id="O32-fl-2gj">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSz-Lk-hqp">
@@ -1144,15 +1148,15 @@
         <image name="bookImagePlaceHolder" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6cG-px-F2Z"/>
-        <segue reference="Ujy-ks-P2v"/>
-        <segue reference="e02-Ha-Qqv"/>
-        <segue reference="yR9-du-3AP"/>
-        <segue reference="HDb-qL-hvr"/>
-        <segue reference="Ctc-Ru-Z3Z"/>
+        <segue reference="54Q-iH-NmM"/>
         <segue reference="y61-4T-V2B"/>
         <segue reference="0Mz-Ai-fck"/>
         <segue reference="05p-Ug-APB"/>
+        <segue reference="ZrW-nd-kOP"/>
+        <segue reference="HDb-qL-hvr"/>
+        <segue reference="Ujy-ks-P2v"/>
+        <segue reference="6cG-px-F2Z"/>
+        <segue reference="Ctc-Ru-Z3Z"/>
         <segue reference="Y6A-PI-vT3"/>
     </inferredMetricsTieBreakers>
 </document>

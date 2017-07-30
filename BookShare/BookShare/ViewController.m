@@ -29,8 +29,99 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.btnLogOut.enabled = NO;
+    self.btnLogOut.hidden = YES;
+    self.btnRequestSent.enabled = NO;
+    self.btnRequestSent.hidden = YES;
+    self.btnRequestReceived.enabled = NO;
+    self.btnRequestReceived.hidden = YES;
+    self.btnLibrary.enabled = NO;
+    self.btnLibrary.hidden = YES;
+    
+    
+    UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button1 setImage:[UIImage imageNamed:@"library.png"] forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(libraryClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button1 setFrame:CGRectMake(0, 0, 40, 50)];
+
+    
+    UIBarButtonItem *barButton1 = [[UIBarButtonItem alloc] initWithCustomView:button1];
+    
+    UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button2 setImage:[UIImage imageNamed:@"requestSent.png"] forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(requestSentClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button2 setFrame:CGRectMake(0, 0, 40, 45)];
+    
+    
+    UIBarButtonItem *barButton2 = [[UIBarButtonItem alloc] initWithCustomView:button2];
+    
+    UIButton *button3 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button3 setImage:[UIImage imageNamed:@"requestReceived.png"] forState:UIControlStateNormal];
+    [button3 addTarget:self action:@selector(requestReceivedClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button3 setFrame:CGRectMake(0, 0, 35, 30)];
+    
+    
+    UIBarButtonItem *barButton3 = [[UIBarButtonItem alloc] initWithCustomView:button3];
+    
+    UIButton *button4 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button4 setImage:[UIImage imageNamed:@"log_out.png"] forState:UIControlStateNormal];
+    [button4 addTarget:self action:@selector(logoutClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button4 setFrame:CGRectMake(0, 0, 40, 35)];
+    
+    
+    UIBarButtonItem *barButton4 = [[UIBarButtonItem alloc] initWithCustomView:button4];
+    
+    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedItem.width = 35.0f;
+    
+    
+    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton1, fixedItem, barButton2,fixedItem,barButton3,fixedItem,barButton4, nil];
+    
+
+    
+
+//    UIBarButtonItem *button1 = [[UIBarButtonItem alloc] initWithTitle:@"Library"
+//                                                                style:UIBarButtonItemStylePlain
+//                                
+//                                                               target:self
+//                                                               action:@selector(libraryClicked)];
+//    [button1 setTitleTextAttributes:attributes forState:UIControlStateNormal];
+//    
+//    
+//
+//    
+//    
+//    
+//    UIBarButtonItem *button2 = [[UIBarButtonItem alloc] initWithTitle:@"Request Sent"
+//                                                                style:UIBarButtonItemStylePlain
+//                                                               target:self
+//                                                               action:@selector(requestSentClicked)];
+//    
+//    [button2 setTitleTextAttributes:attributes forState:UIControlStateNormal];
+//
+//    UIBarButtonItem *button3 = [[UIBarButtonItem alloc] initWithTitle:@"Request Received"
+//                                                                style:UIBarButtonItemStylePlain
+//                                                               target:self
+//                                                               action:@selector(requestReceivedClicked)];
+//    
+//    [button3 setTitleTextAttributes:attributes forState:UIControlStateNormal];
+//    
+//    UIBarButtonItem *button4 = [[UIBarButtonItem alloc] initWithTitle:@"Log out"
+//                                                                style:UIBarButtonItemStylePlain
+//                                                               target:self
+//                                                               action:@selector(logoutClicked)];
+//    
+//    [button4 setTitleTextAttributes:attributes forState:UIControlStateNormal];
+//    
+//    
+//    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:button1, button2, button3, button4, nil];
+
+    
 
     [self.navigationItem.backBarButtonItem setTitle:@""];
+    [self.navigationController setToolbarHidden:NO];
+    [self setToolbarItems:myButtonArray animated:NO];
+    
     
     //location
     locationManager = [[CLLocationManager alloc] init];
@@ -77,20 +168,38 @@
     
     /*********************************share test ***************************/
 
+    if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
+        
+        NSLog(@"test");
+        FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
 
+        //http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
+
+        content.contentURL = [NSURL URLWithString:@"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"];
+        content.quote = @"Nurture your love for reading at no cost! Share your books using the Meridio App! I just did ;)";
     
-    NSLog(@"test");
-    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-
-    //http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
-
-    content.contentURL = [NSURL URLWithString:@"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"];
-    content.quote = @"Nurture your love for reading at no cost! Share your books using the Meridio App! I just did ;)";
-    
-    [FBSDKShareDialog showFromViewController:self
+        [FBSDKShareDialog showFromViewController:self
                                  withContent:content
                                     delegate:nil];
-    
+    }else{
+        FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+        [loginManager logInWithPublishPermissions:@[@"publish_actions"]
+                               fromViewController:self
+                                          handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                              //TODO: process error or result.
+                                              FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+                                              
+                                              //http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
+                                              
+                                              content.contentURL = [NSURL URLWithString:@"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"];
+                                              content.quote = @"Nurture your love for reading at no cost! Share your books using the Meridio App! I just did ;)";
+                                              
+                                              [FBSDKShareDialog showFromViewController:self
+                                                                           withContent:content
+                                                                              delegate:nil];
+                                          }];
+    }
+
     
 //    // Create an object
 //    NSDictionary *properties = @{
@@ -196,6 +305,25 @@
 - (void)sharerDidCancel:(id<FBSDKSharing>)sharer
 {
     NSLog(@"share cancelled");
+}
+-(void)libraryClicked{
+    [self performSegueWithIdentifier:@"ToLibrary" sender:nil];
+    
+}
+-(void)requestSentClicked{
+    [self performSegueWithIdentifier:@"ToRequestSent" sender:nil];
+    
+}
+-(void)requestReceivedClicked{
+    [self performSegueWithIdentifier:@"ToRequestReceived" sender:nil];
+    
+}
+-(void)logoutClicked{
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+    [loginManager logOut];
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+    [self performSegueWithIdentifier:@"ToLogIn" sender:nil];
+    
 }
 
 

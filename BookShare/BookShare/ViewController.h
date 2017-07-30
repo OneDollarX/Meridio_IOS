@@ -26,6 +26,10 @@
 - (IBAction)SettingClicked:(id)sender;
 
 - (IBAction)logOut:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btnLibrary;
+@property (strong, nonatomic) IBOutlet UIButton *btnRequestSent;
+@property (strong, nonatomic) IBOutlet UIButton *btnRequestReceived;
+@property (strong, nonatomic) IBOutlet UIButton *btnLogOut;
 
 @end
 
