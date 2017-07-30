@@ -156,6 +156,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BooksAroundMeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookAroundMeCell" forIndexPath:indexPath];
     
+
+    
+    
+    
+    
      // Configure the cell...
     cell.bookAroundMeId.hidden = YES;
     

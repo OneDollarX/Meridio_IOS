@@ -176,7 +176,10 @@
             
             //http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
             
-            content.contentURL = [NSURL URLWithString:@"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"];
+            //content.contentURL = [NSURL URLWithString:@"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"];
+            content.contentURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@",_tradeBookImageUrl]];
+            
+            
             content.quote = @"Nurture your love for reading at no cost! Share your books using the Meridio App! I just did ;)";
             
             [FBSDKShareDialog showFromViewController:self
