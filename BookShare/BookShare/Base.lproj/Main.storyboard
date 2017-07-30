@@ -50,7 +50,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="WBO-z2-qsK" kind="show" identifier="ToLibrary" id="hkF-o9-tev"/>
+                                    <segue destination="WBO-z2-qsK" kind="show" identifier="ToLibrary" animates="NO" id="hkF-o9-tev"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okt-6D-cOW">
@@ -60,7 +60,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ls4-GR-XK4" kind="show" identifier="ToRequestSent" id="UKI-F0-rCe"/>
+                                    <segue destination="Ls4-GR-XK4" kind="show" identifier="ToRequestSent" animates="NO" id="UKI-F0-rCe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-dJ-DJC">
@@ -70,7 +70,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="diw-rB-nyK" kind="show" identifier="ToRequestReceived" id="Ujy-ks-P2v"/>
+                                    <segue destination="diw-rB-nyK" kind="show" identifier="ToRequestReceived" animates="NO" id="Ujy-ks-P2v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h50-73-ibP">
@@ -81,7 +81,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IiM-vg-rSD"/>
-                                    <segue destination="tmU-SF-iAy" kind="showDetail" identifier="ToLogIn" action="showViewController:sender:" id="HDb-qL-hvr"/>
+                                    <segue destination="tmU-SF-iAy" kind="showDetail" identifier="ToLogIn" animates="NO" action="showViewController:sender:" id="HDb-qL-hvr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,17 +218,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Library" id="Ngh-07-bFG">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="Krq-1s-YmF">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="oJm-jh-o3s"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="refresh" id="JRY-kW-zm7">
                             <connections>
                                 <action selector="refresh:" destination="5Vh-jR-i66" id="mDq-5H-Cn6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="XQU-SD-5D9" kind="show" identifier="LibraryToRequestSent" animates="NO" id="Pc5-xx-kdb"/>
+                        <segue destination="i96-OA-IDH" kind="show" identifier="LibraryToRequestReceived" animates="NO" id="RW4-Jf-C7f"/>
+                        <segue destination="tmU-SF-iAy" kind="show" identifier="LibraryToLogIn" id="F8w-OM-idi"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LibraryToMain" animates="NO" id="aex-BQ-AZw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ErD-Sz-Wyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -290,13 +291,13 @@
                             <outlet property="delegate" destination="XQU-SD-5D9" id="qBw-6Y-9wN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Requests Sent By Me" id="RWW-BF-wmd">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="jVY-xX-S4E">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="dO0-dw-eLa"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Requests Sent By Me" id="RWW-BF-wmd"/>
+                    <connections>
+                        <segue destination="5Vh-jR-i66" kind="show" identifier="RequestSentToLibrary" animates="NO" id="m4I-lB-NAl"/>
+                        <segue destination="i96-OA-IDH" kind="show" identifier="RequestSentToRequestReceived" animates="NO" id="J9Q-bj-RuQ"/>
+                        <segue destination="tmU-SF-iAy" kind="show" identifier="RequestSentToLogIn" animates="NO" id="auU-b6-jqE"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="RequestSentToMain" animates="NO" id="fSN-2a-org"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cot-Vg-f94" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -406,19 +407,19 @@
                             <outlet property="delegate" destination="i96-OA-IDH" id="uSO-N2-dhP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Requests Sent To Me" id="wWe-vd-d3b">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="Gja-cd-vwK">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="bPg-1N-ZDX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Requests Sent To Me" id="wWe-vd-d3b"/>
+                    <connections>
+                        <segue destination="5Vh-jR-i66" kind="show" identifier="RequestReceivedToLibrary" animates="NO" id="9EB-O9-Qyl"/>
+                        <segue destination="XQU-SD-5D9" kind="show" identifier="RequestReceivedToRequestSent" animates="NO" id="JQw-kf-BWJ"/>
+                        <segue destination="tmU-SF-iAy" kind="show" identifier="RequestReceivedToLogIn" animates="NO" id="foR-Ji-oUj"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="RequestReceivedToMain" animates="NO" id="4nJ-w3-8Hl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Cz-uu-p3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1074.375" y="660.21126760563379"/>
         </scene>
-        <!--Library-->
+        <!--Requestor's Library-->
         <scene sceneID="bwf-fz-aNv">
             <objects>
                 <tableViewController id="Tig-MZ-Of4" customClass="UserLibraryTableViewController" sceneMemberID="viewController">
@@ -476,10 +477,10 @@
                             <outlet property="delegate" destination="Tig-MZ-Of4" id="hXt-R5-733"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Library" id="mLX-e1-ZSm">
+                    <navigationItem key="navigationItem" title="Requestor's Library" id="mLX-e1-ZSm">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="TMq-2n-unx">
                             <connections>
-                                <segue destination="diw-rB-nyK" kind="show" id="N8O-Lq-fPS"/>
+                                <segue destination="diw-rB-nyK" kind="show" animates="NO" id="N8O-Lq-fPS"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Decline" id="spO-BL-pBb">
@@ -1148,15 +1149,17 @@
         <image name="bookImagePlaceHolder" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="54Q-iH-NmM"/>
+        <segue reference="Pc5-xx-kdb"/>
+        <segue reference="9EB-O9-Qyl"/>
+        <segue reference="J9Q-bj-RuQ"/>
         <segue reference="y61-4T-V2B"/>
         <segue reference="0Mz-Ai-fck"/>
-        <segue reference="05p-Ug-APB"/>
-        <segue reference="ZrW-nd-kOP"/>
-        <segue reference="HDb-qL-hvr"/>
-        <segue reference="Ujy-ks-P2v"/>
-        <segue reference="6cG-px-F2Z"/>
-        <segue reference="Ctc-Ru-Z3Z"/>
         <segue reference="Y6A-PI-vT3"/>
+        <segue reference="hGG-KG-OLR"/>
+        <segue reference="Ctc-Ru-Z3Z"/>
+        <segue reference="N8O-Lq-fPS"/>
+        <segue reference="ysZ-Jb-9Ab"/>
+        <segue reference="HDb-qL-hvr"/>
+        <segue reference="ZrW-nd-kOP"/>
     </inferredMetricsTieBreakers>
 </document>

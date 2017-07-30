@@ -8,6 +8,8 @@
 
 #import "MyRequestsTableViewController.h"
 #import "MyRequestsTableViewCell.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface MyRequestsTableViewController () {
     NSString *fromUserId;
@@ -21,7 +23,65 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor darkGrayColor];
+    self.navigationItem.hidesBackButton = YES;
     fromUserId = @"4";
+    
+    
+    UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button1 setImage:[UIImage imageNamed:@"library.png"] forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(libraryClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button1 setFrame:CGRectMake(0, 0, 40, 50)];
+    
+    
+    UIBarButtonItem *barButton1 = [[UIBarButtonItem alloc] initWithCustomView:button1];
+    
+    UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button2 setImage:[UIImage imageNamed:@"requestSent.png"] forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(requestSentClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button2 setFrame:CGRectMake(0, 0, 40, 45)];
+    
+    
+    UIBarButtonItem *barButton2 = [[UIBarButtonItem alloc] initWithCustomView:button2];
+    
+    UIButton *button3 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button3 setImage:[UIImage imageNamed:@"requestReceived.png"] forState:UIControlStateNormal];
+    [button3 addTarget:self action:@selector(requestReceivedClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button3 setFrame:CGRectMake(0, 0, 35, 30)];
+    
+    
+    UIBarButtonItem *barButton3 = [[UIBarButtonItem alloc] initWithCustomView:button3];
+    
+    UIButton *button4 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button4 setImage:[UIImage imageNamed:@"log_out.png"] forState:UIControlStateNormal];
+    [button4 addTarget:self action:@selector(logoutClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button4 setFrame:CGRectMake(0, 0, 40, 35)];
+    
+    
+    UIBarButtonItem *barButton4 = [[UIBarButtonItem alloc] initWithCustomView:button4];
+    
+    UIButton *button5 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button5 setImage:[UIImage imageNamed:@"Main.png"] forState:UIControlStateNormal];
+    [button5 addTarget:self action:@selector(mainClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button5 setFrame:CGRectMake(0, 0, 40, 40)];
+    
+    
+    UIBarButtonItem *barButton5 = [[UIBarButtonItem alloc] initWithCustomView:button5];
+    
+    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedItem.width = 15.0f;
+    
+    
+    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton5, fixedItem, barButton1, fixedItem, barButton2,fixedItem,barButton3,fixedItem,barButton4, nil];
+    
+    
+    
+    
+    [self.navigationItem.backBarButtonItem setTitle:@""];
+    [self.navigationController setToolbarHidden:NO];
+    [self setToolbarItems:myButtonArray animated:NO];
+    
+    
+    
     
     /**************************requests sent start***********************/
     
@@ -167,6 +227,31 @@
     //cell.myRequestsImageView.image = image;
     return cell;
 }
+
+
+-(void)libraryClicked{
+    [self performSegueWithIdentifier:@"RequestSentToLibrary" sender:nil];
+    
+}
+-(void)requestSentClicked{
+    
+}
+-(void)requestReceivedClicked{
+    [self performSegueWithIdentifier:@"RequestSentToRequestReceived" sender:nil];
+    
+}
+-(void)logoutClicked{
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+    [loginManager logOut];
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+    [self performSegueWithIdentifier:@"RequestSentToLogIn" sender:nil];
+    
+}
+-(void)mainClicked{
+    [self performSegueWithIdentifier:@"RequestSentToMain" sender:nil];
+}
+
+
 
 
 /*

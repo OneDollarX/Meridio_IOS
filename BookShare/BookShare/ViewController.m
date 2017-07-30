@@ -37,6 +37,7 @@
     self.btnRequestReceived.hidden = YES;
     self.btnLibrary.enabled = NO;
     self.btnLibrary.hidden = YES;
+    self.navigationItem.hidesBackButton = YES;
     
     
     UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
@@ -71,50 +72,22 @@
     
     UIBarButtonItem *barButton4 = [[UIBarButtonItem alloc] initWithCustomView:button4];
     
+    
+    UIButton *button5 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button5 setImage:[UIImage imageNamed:@"Main.png"] forState:UIControlStateNormal];
+    [button5 addTarget:self action:@selector(mainClicked)forControlEvents:UIControlEventTouchUpInside];
+    [button5 setFrame:CGRectMake(0, 0, 40, 40)];
+    
+    
+    UIBarButtonItem *barButton5 = [[UIBarButtonItem alloc] initWithCustomView:button5];
+    
     UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    fixedItem.width = 35.0f;
+    fixedItem.width = 15.0f;
     
     
-    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton1, fixedItem, barButton2,fixedItem,barButton3,fixedItem,barButton4, nil];
-    
-
+    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton5, fixedItem, barButton1, fixedItem, barButton2,fixedItem,barButton3,fixedItem,barButton4, nil];
     
 
-//    UIBarButtonItem *button1 = [[UIBarButtonItem alloc] initWithTitle:@"Library"
-//                                                                style:UIBarButtonItemStylePlain
-//                                
-//                                                               target:self
-//                                                               action:@selector(libraryClicked)];
-//    [button1 setTitleTextAttributes:attributes forState:UIControlStateNormal];
-//    
-//    
-//
-//    
-//    
-//    
-//    UIBarButtonItem *button2 = [[UIBarButtonItem alloc] initWithTitle:@"Request Sent"
-//                                                                style:UIBarButtonItemStylePlain
-//                                                               target:self
-//                                                               action:@selector(requestSentClicked)];
-//    
-//    [button2 setTitleTextAttributes:attributes forState:UIControlStateNormal];
-//
-//    UIBarButtonItem *button3 = [[UIBarButtonItem alloc] initWithTitle:@"Request Received"
-//                                                                style:UIBarButtonItemStylePlain
-//                                                               target:self
-//                                                               action:@selector(requestReceivedClicked)];
-//    
-//    [button3 setTitleTextAttributes:attributes forState:UIControlStateNormal];
-//    
-//    UIBarButtonItem *button4 = [[UIBarButtonItem alloc] initWithTitle:@"Log out"
-//                                                                style:UIBarButtonItemStylePlain
-//                                                               target:self
-//                                                               action:@selector(logoutClicked)];
-//    
-//    [button4 setTitleTextAttributes:attributes forState:UIControlStateNormal];
-//    
-//    
-//    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:button1, button2, button3, button4, nil];
 
     
 
@@ -279,7 +252,7 @@
     if (currentLocation != nil) {
         Long = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         Lat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-        NSLog(@"%@,%@",Long,Lat);
+        //NSLog(@"%@,%@",Long,Lat);
         
         
         
@@ -324,6 +297,9 @@
     [FBSDKAccessToken setCurrentAccessToken:nil];
     [self performSegueWithIdentifier:@"ToLogIn" sender:nil];
     
+}
+-(void)mainClicked{
+    //[self performSegueWithIdentifier:@"ToLibrary" sender:nil];
 }
 
 
