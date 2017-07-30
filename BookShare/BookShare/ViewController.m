@@ -174,34 +174,7 @@
     }
 
     
-//    // Create an object
-//    NSDictionary *properties = @{
-//                                 @"og:type": @"books.book",
-//                                 @"og:title": @"Dark Tower",
-//                                 @"og:description": @"Nurture your love for reading at no cost! Share your books using the Meridio App! I just did ;)",
-//                                 @"og:image": @"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-//
-//                                 @"books:isbn": @"0-553-57340-3",
-//                                 };
-//    FBSDKShareOpenGraphObject *object = [FBSDKShareOpenGraphObject objectWithProperties:properties];
-//    
-//    // Create an action
-//    FBSDKShareOpenGraphAction *action = [[FBSDKShareOpenGraphAction alloc] init];
-//    action.actionType = @"books.reads";
-//    [action setObject:object forKey:@"books:book"];
-//
-//    
-//    
-//    // Create the content
-//    FBSDKShareOpenGraphContent *content = [[FBSDKShareOpenGraphContent alloc] init];
-//    content.action = action;
-//    content.previewPropertyName = @"books:book";
-//    
-//    [FBSDKShareDialog showFromViewController:self
-//                                 withContent:content
-//                                    delegate:nil];
- 
-    
+
     /*********************************share test ***************************/
     
     
