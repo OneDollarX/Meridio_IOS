@@ -22,8 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self.navigationItem.backBarButtonItem setTitle:@""];
+    
+    //display book details
 
     self.tradeBookTitleLabel.text = _tradeBookTitle;
     self.tradeBookGenreLabel.text = _tradeBookGenre;
@@ -43,15 +44,7 @@
 
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)acceptTradeReqeust:(id)sender {
     
@@ -158,25 +151,17 @@
 
         // call method whatever u need
         
-        /*********************************share test ***************************/
+        /*********************************share start ***************************/
         
         
-//        slComposer = [[SLComposeViewController alloc] init];
-//        slComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-//        [slComposer setInitialText:[NSString stringWithFormat:@"%@ - Download our app", self.label.text]];
-//        [slComposer addImage:self.imageView.image];
-//        [self presentViewController:slComposer animated:YES completion:nil];
+
         
         
         
         if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
             
-            NSLog(@"test");
             FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-            
-            //http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
-            
-            //content.contentURL = [NSURL URLWithString:@"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"];
+
             content.contentURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@",_tradeBookImageUrl]];
             
             
@@ -193,9 +178,9 @@
                                                   //TODO: process error or result.
                                                   FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
                                                   
-                                                  //http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
                                                   
-                                                  content.contentURL = [NSURL URLWithString:@"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"];
+                                                  content.contentURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@",_tradeBookImageUrl]];
+                                                  
                                                   content.quote = @"Nurture your love for reading at no cost! Share your books using the Meridio App! I just did ;)";
                                                   
                                                   [FBSDKShareDialog showFromViewController:self
@@ -224,4 +209,17 @@
     
     
 }
+
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+
+
 @end

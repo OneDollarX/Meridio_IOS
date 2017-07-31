@@ -9,6 +9,7 @@
 #ifndef constant_h
 #define constant_h
 
+//hold constant for userID
 
 static NSString *const USER_ID;
 

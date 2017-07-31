@@ -4,7 +4,7 @@
 //
 //  Created by YILUN XU on 7/28/17.
 //  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
-//
+//  yyyyyyyyyyyyyyyyyy
 
 #import "RequestBookDetailViewController.h"
 #import "LibraryTableViewCell.h"
@@ -22,13 +22,23 @@
 
 
 - (void)viewDidLoad {
-    fromUserId = @"1";
+    
     [super viewDidLoad];
+    fromUserId = @"1";
+    
+    /*
+     Check library books number before user can request,
+     if user does not have books in library, he is not allowed
+     to request books from booksAroundMe.
+     First set RequestButton disabled.
+     
+     */
+    
+    
     _requestBookBtn.enabled = NO;
     
     
-/***************************************check library book nums************************/
-    
+/*********************************check library book nums start************************/
     
     
     // Setup the session
@@ -88,7 +98,7 @@
                                             NSLog(@"%@",title);
                                             
                                             if(title.count == 0){
-                                                NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                                                NSLog(@"No BOOKS in your library");
                                                 UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                                                                message:@"There are no books in your library to trade. Please post a book first!"
                                                                                                         preferredStyle:UIAlertControllerStyleAlert];
@@ -105,22 +115,13 @@
                                                 
                                                 
                                             }else{
-                                                NSLog(@"?????????????????????????????");
+                                                NSLog(@"you have books in library");
                                                 _requestBookBtn.enabled = YES;
                                             }
 
                                             
                                         });
-
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
+                                
                                     }else{
                                         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                                                        message:@"Something is wrong with the server. Plsese check!"
@@ -138,20 +139,13 @@
     
     [dataTask resume];
     
-    
 
+    /******************************check library book nums end************************/
     
     
+    /******************************load book details start ************************/
     
-    
-    /***************************************check library book nums************************/
-    
-    
-
-
-    
-    
-    
+   
     // Do any additional setup after loading the view.
     NSLog(@"this is the isbn passed from booksAroundMe%@",_requestBookIsbn);
     NSLog(@"this is the id passed from booksAroundMe%@",_requestBookId);
@@ -211,6 +205,9 @@
     UIImage *image = [UIImage imageWithData:data];
     [self.requestBookImageView setImage:image];
     
+    
+    /******************************load book details end ************************/
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -221,18 +218,11 @@
     [super viewDidUnload];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)reqeustBook:(id)sender {
     
+    //when user clicks the request button
     
     
     /**************************Create Request Start***********************/
@@ -316,10 +306,15 @@
     
     /**************************Create Request End***********************/
     
+    
+    
+    //if success
+    
+    
     /******************************alert start*****************************/
     
     UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Success"
-                                                                  message:@""
+                                                                  message:@"You can wait for the book's owner to reply~"
                                                            preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* goButton = [UIAlertAction actionWithTitle:@"Go to Main Page"
@@ -341,4 +336,17 @@
     
     /******************************alert end ******************************/
 }
+
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+
+
 @end

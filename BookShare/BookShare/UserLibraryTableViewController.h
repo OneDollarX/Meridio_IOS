@@ -10,7 +10,6 @@
 
 @interface UserLibraryTableViewController : UITableViewController {
     
-    
     NSMutableArray *title;
     NSMutableArray *categories;
     NSMutableArray *imageURL;
@@ -18,6 +17,8 @@
     NSMutableArray *bookDescription;
 }
 
+
+//pass from
 @property (strong, nonatomic) NSString *receivedUserId;
 @property (strong, nonatomic) NSString *receivedTradeId;
 @property (strong, nonatomic) NSString *receivedEmail;

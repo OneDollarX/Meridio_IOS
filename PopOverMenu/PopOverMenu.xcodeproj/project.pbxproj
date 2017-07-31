@@ -7,68 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B7495481F2BA433009177A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7495471F2BA433009177A5 /* main.m */; };
-		1B74954B1F2BA433009177A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B74954A1F2BA433009177A5 /* AppDelegate.m */; };
-		1B74954E1F2BA433009177A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B74954D1F2BA433009177A5 /* ViewController.m */; };
-		1B7495511F2BA433009177A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B74954F1F2BA433009177A5 /* Main.storyboard */; };
-		1B7495531F2BA433009177A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7495521F2BA433009177A5 /* Assets.xcassets */; };
-		1B7495561F2BA433009177A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7495541F2BA433009177A5 /* LaunchScreen.storyboard */; };
-		1B7495611F2BA433009177A5 /* PopOverMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7495601F2BA433009177A5 /* PopOverMenuTests.m */; };
-		1B74956C1F2BA434009177A5 /* PopOverMenuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B74956B1F2BA434009177A5 /* PopOverMenuUITests.m */; };
+		1B77EE281F2FC55300496E37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B77EE271F2FC55300496E37 /* main.m */; };
+		1B77EE2B1F2FC55300496E37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B77EE2A1F2FC55300496E37 /* AppDelegate.m */; };
+		1B77EE2E1F2FC55300496E37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B77EE2D1F2FC55300496E37 /* ViewController.m */; };
+		1B77EE311F2FC55300496E37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B77EE2F1F2FC55300496E37 /* Main.storyboard */; };
+		1B77EE331F2FC55300496E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B77EE321F2FC55300496E37 /* Assets.xcassets */; };
+		1B77EE361F2FC55300496E37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B77EE341F2FC55300496E37 /* LaunchScreen.storyboard */; };
+		1B77EE411F2FC55300496E37 /* PopOverMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B77EE401F2FC55300496E37 /* PopOverMenuTests.m */; };
+		1B77EE4C1F2FC55300496E37 /* PopOverMenuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B77EE4B1F2FC55300496E37 /* PopOverMenuUITests.m */; };
+		1B77EE5C1F2FC71E00496E37 /* PopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B77EE5B1F2FC71E00496E37 /* PopOverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1B74955D1F2BA433009177A5 /* PBXContainerItemProxy */ = {
+		1B77EE3D1F2FC55300496E37 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1B74953B1F2BA433009177A5 /* Project object */;
+			containerPortal = 1B77EE1B1F2FC55300496E37 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1B7495421F2BA433009177A5;
+			remoteGlobalIDString = 1B77EE221F2FC55300496E37;
 			remoteInfo = PopOverMenu;
 		};
-		1B7495681F2BA434009177A5 /* PBXContainerItemProxy */ = {
+		1B77EE481F2FC55300496E37 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1B74953B1F2BA433009177A5 /* Project object */;
+			containerPortal = 1B77EE1B1F2FC55300496E37 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1B7495421F2BA433009177A5;
+			remoteGlobalIDString = 1B77EE221F2FC55300496E37;
 			remoteInfo = PopOverMenu;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B7495431F2BA433009177A5 /* PopOverMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopOverMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B7495471F2BA433009177A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1B7495491F2BA433009177A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1B74954A1F2BA433009177A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1B74954C1F2BA433009177A5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1B74954D1F2BA433009177A5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1B7495501F2BA433009177A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1B7495521F2BA433009177A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1B7495551F2BA433009177A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1B7495571F2BA433009177A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B74955C1F2BA433009177A5 /* PopOverMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopOverMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B7495601F2BA433009177A5 /* PopOverMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopOverMenuTests.m; sourceTree = "<group>"; };
-		1B7495621F2BA434009177A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B7495671F2BA434009177A5 /* PopOverMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopOverMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B74956B1F2BA434009177A5 /* PopOverMenuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopOverMenuUITests.m; sourceTree = "<group>"; };
-		1B74956D1F2BA434009177A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B77EE231F2FC55300496E37 /* PopOverMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopOverMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B77EE271F2FC55300496E37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B77EE291F2FC55300496E37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1B77EE2A1F2FC55300496E37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1B77EE2C1F2FC55300496E37 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1B77EE2D1F2FC55300496E37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1B77EE301F2FC55300496E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B77EE321F2FC55300496E37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B77EE351F2FC55300496E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B77EE371F2FC55300496E37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B77EE3C1F2FC55300496E37 /* PopOverMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopOverMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B77EE401F2FC55300496E37 /* PopOverMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopOverMenuTests.m; sourceTree = "<group>"; };
+		1B77EE421F2FC55300496E37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B77EE471F2FC55300496E37 /* PopOverMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopOverMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B77EE4B1F2FC55300496E37 /* PopOverMenuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopOverMenuUITests.m; sourceTree = "<group>"; };
+		1B77EE4D1F2FC55300496E37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B77EE591F2FC6C400496E37 /* PopOverViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopOverViewControllerProtocol.h; sourceTree = "<group>"; };
+		1B77EE5A1F2FC71E00496E37 /* PopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopOverViewController.h; sourceTree = "<group>"; };
+		1B77EE5B1F2FC71E00496E37 /* PopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopOverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1B7495401F2BA433009177A5 /* Frameworks */ = {
+		1B77EE201F2FC55300496E37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B7495591F2BA433009177A5 /* Frameworks */ = {
+		1B77EE391F2FC55300496E37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B7495641F2BA434009177A5 /* Frameworks */ = {
+		1B77EE441F2FC55300496E37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,64 +82,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B74953A1F2BA433009177A5 = {
+		1B77EE1A1F2FC55300496E37 = {
 			isa = PBXGroup;
 			children = (
-				1B7495451F2BA433009177A5 /* PopOverMenu */,
-				1B74955F1F2BA433009177A5 /* PopOverMenuTests */,
-				1B74956A1F2BA434009177A5 /* PopOverMenuUITests */,
-				1B7495441F2BA433009177A5 /* Products */,
+				1B77EE251F2FC55300496E37 /* PopOverMenu */,
+				1B77EE3F1F2FC55300496E37 /* PopOverMenuTests */,
+				1B77EE4A1F2FC55300496E37 /* PopOverMenuUITests */,
+				1B77EE241F2FC55300496E37 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1B7495441F2BA433009177A5 /* Products */ = {
+		1B77EE241F2FC55300496E37 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B7495431F2BA433009177A5 /* PopOverMenu.app */,
-				1B74955C1F2BA433009177A5 /* PopOverMenuTests.xctest */,
-				1B7495671F2BA434009177A5 /* PopOverMenuUITests.xctest */,
+				1B77EE231F2FC55300496E37 /* PopOverMenu.app */,
+				1B77EE3C1F2FC55300496E37 /* PopOverMenuTests.xctest */,
+				1B77EE471F2FC55300496E37 /* PopOverMenuUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1B7495451F2BA433009177A5 /* PopOverMenu */ = {
+		1B77EE251F2FC55300496E37 /* PopOverMenu */ = {
 			isa = PBXGroup;
 			children = (
-				1B7495491F2BA433009177A5 /* AppDelegate.h */,
-				1B74954A1F2BA433009177A5 /* AppDelegate.m */,
-				1B74954C1F2BA433009177A5 /* ViewController.h */,
-				1B74954D1F2BA433009177A5 /* ViewController.m */,
-				1B74954F1F2BA433009177A5 /* Main.storyboard */,
-				1B7495521F2BA433009177A5 /* Assets.xcassets */,
-				1B7495541F2BA433009177A5 /* LaunchScreen.storyboard */,
-				1B7495571F2BA433009177A5 /* Info.plist */,
-				1B7495461F2BA433009177A5 /* Supporting Files */,
+				1B77EE291F2FC55300496E37 /* AppDelegate.h */,
+				1B77EE2A1F2FC55300496E37 /* AppDelegate.m */,
+				1B77EE591F2FC6C400496E37 /* PopOverViewControllerProtocol.h */,
+				1B77EE5A1F2FC71E00496E37 /* PopOverViewController.h */,
+				1B77EE5B1F2FC71E00496E37 /* PopOverViewController.m */,
+				1B77EE2C1F2FC55300496E37 /* ViewController.h */,
+				1B77EE2D1F2FC55300496E37 /* ViewController.m */,
+				1B77EE2F1F2FC55300496E37 /* Main.storyboard */,
+				1B77EE321F2FC55300496E37 /* Assets.xcassets */,
+				1B77EE341F2FC55300496E37 /* LaunchScreen.storyboard */,
+				1B77EE371F2FC55300496E37 /* Info.plist */,
+				1B77EE261F2FC55300496E37 /* Supporting Files */,
 			);
 			path = PopOverMenu;
 			sourceTree = "<group>";
 		};
-		1B7495461F2BA433009177A5 /* Supporting Files */ = {
+		1B77EE261F2FC55300496E37 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1B7495471F2BA433009177A5 /* main.m */,
+				1B77EE271F2FC55300496E37 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1B74955F1F2BA433009177A5 /* PopOverMenuTests */ = {
+		1B77EE3F1F2FC55300496E37 /* PopOverMenuTests */ = {
 			isa = PBXGroup;
 			children = (
-				1B7495601F2BA433009177A5 /* PopOverMenuTests.m */,
-				1B7495621F2BA434009177A5 /* Info.plist */,
+				1B77EE401F2FC55300496E37 /* PopOverMenuTests.m */,
+				1B77EE421F2FC55300496E37 /* Info.plist */,
 			);
 			path = PopOverMenuTests;
 			sourceTree = "<group>";
 		};
-		1B74956A1F2BA434009177A5 /* PopOverMenuUITests */ = {
+		1B77EE4A1F2FC55300496E37 /* PopOverMenuUITests */ = {
 			isa = PBXGroup;
 			children = (
-				1B74956B1F2BA434009177A5 /* PopOverMenuUITests.m */,
-				1B74956D1F2BA434009177A5 /* Info.plist */,
+				1B77EE4B1F2FC55300496E37 /* PopOverMenuUITests.m */,
+				1B77EE4D1F2FC55300496E37 /* Info.plist */,
 			);
 			path = PopOverMenuUITests;
 			sourceTree = "<group>";
@@ -143,13 +150,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B7495421F2BA433009177A5 /* PopOverMenu */ = {
+		1B77EE221F2FC55300496E37 /* PopOverMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B7495701F2BA434009177A5 /* Build configuration list for PBXNativeTarget "PopOverMenu" */;
+			buildConfigurationList = 1B77EE501F2FC55300496E37 /* Build configuration list for PBXNativeTarget "PopOverMenu" */;
 			buildPhases = (
-				1B74953F1F2BA433009177A5 /* Sources */,
-				1B7495401F2BA433009177A5 /* Frameworks */,
-				1B7495411F2BA433009177A5 /* Resources */,
+				1B77EE1F1F2FC55300496E37 /* Sources */,
+				1B77EE201F2FC55300496E37 /* Frameworks */,
+				1B77EE211F2FC55300496E37 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -157,72 +164,72 @@
 			);
 			name = PopOverMenu;
 			productName = PopOverMenu;
-			productReference = 1B7495431F2BA433009177A5 /* PopOverMenu.app */;
+			productReference = 1B77EE231F2FC55300496E37 /* PopOverMenu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1B74955B1F2BA433009177A5 /* PopOverMenuTests */ = {
+		1B77EE3B1F2FC55300496E37 /* PopOverMenuTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B7495731F2BA434009177A5 /* Build configuration list for PBXNativeTarget "PopOverMenuTests" */;
+			buildConfigurationList = 1B77EE531F2FC55300496E37 /* Build configuration list for PBXNativeTarget "PopOverMenuTests" */;
 			buildPhases = (
-				1B7495581F2BA433009177A5 /* Sources */,
-				1B7495591F2BA433009177A5 /* Frameworks */,
-				1B74955A1F2BA433009177A5 /* Resources */,
+				1B77EE381F2FC55300496E37 /* Sources */,
+				1B77EE391F2FC55300496E37 /* Frameworks */,
+				1B77EE3A1F2FC55300496E37 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1B74955E1F2BA433009177A5 /* PBXTargetDependency */,
+				1B77EE3E1F2FC55300496E37 /* PBXTargetDependency */,
 			);
 			name = PopOverMenuTests;
 			productName = PopOverMenuTests;
-			productReference = 1B74955C1F2BA433009177A5 /* PopOverMenuTests.xctest */;
+			productReference = 1B77EE3C1F2FC55300496E37 /* PopOverMenuTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1B7495661F2BA434009177A5 /* PopOverMenuUITests */ = {
+		1B77EE461F2FC55300496E37 /* PopOverMenuUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B7495761F2BA434009177A5 /* Build configuration list for PBXNativeTarget "PopOverMenuUITests" */;
+			buildConfigurationList = 1B77EE561F2FC55300496E37 /* Build configuration list for PBXNativeTarget "PopOverMenuUITests" */;
 			buildPhases = (
-				1B7495631F2BA434009177A5 /* Sources */,
-				1B7495641F2BA434009177A5 /* Frameworks */,
-				1B7495651F2BA434009177A5 /* Resources */,
+				1B77EE431F2FC55300496E37 /* Sources */,
+				1B77EE441F2FC55300496E37 /* Frameworks */,
+				1B77EE451F2FC55300496E37 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1B7495691F2BA434009177A5 /* PBXTargetDependency */,
+				1B77EE491F2FC55300496E37 /* PBXTargetDependency */,
 			);
 			name = PopOverMenuUITests;
 			productName = PopOverMenuUITests;
-			productReference = 1B7495671F2BA434009177A5 /* PopOverMenuUITests.xctest */;
+			productReference = 1B77EE471F2FC55300496E37 /* PopOverMenuUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1B74953B1F2BA433009177A5 /* Project object */ = {
+		1B77EE1B1F2FC55300496E37 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CarnegieMellonUniversity;
 				TargetAttributes = {
-					1B7495421F2BA433009177A5 = {
+					1B77EE221F2FC55300496E37 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 9VUC3R8D65;
 						ProvisioningStyle = Automatic;
 					};
-					1B74955B1F2BA433009177A5 = {
+					1B77EE3B1F2FC55300496E37 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 1B7495421F2BA433009177A5;
+						TestTargetID = 1B77EE221F2FC55300496E37;
 					};
-					1B7495661F2BA434009177A5 = {
+					1B77EE461F2FC55300496E37 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 1B7495421F2BA433009177A5;
+						TestTargetID = 1B77EE221F2FC55300496E37;
 					};
 				};
 			};
-			buildConfigurationList = 1B74953E1F2BA433009177A5 /* Build configuration list for PBXProject "PopOverMenu" */;
+			buildConfigurationList = 1B77EE1E1F2FC55300496E37 /* Build configuration list for PBXProject "PopOverMenu" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -230,37 +237,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 1B74953A1F2BA433009177A5;
-			productRefGroup = 1B7495441F2BA433009177A5 /* Products */;
+			mainGroup = 1B77EE1A1F2FC55300496E37;
+			productRefGroup = 1B77EE241F2FC55300496E37 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1B7495421F2BA433009177A5 /* PopOverMenu */,
-				1B74955B1F2BA433009177A5 /* PopOverMenuTests */,
-				1B7495661F2BA434009177A5 /* PopOverMenuUITests */,
+				1B77EE221F2FC55300496E37 /* PopOverMenu */,
+				1B77EE3B1F2FC55300496E37 /* PopOverMenuTests */,
+				1B77EE461F2FC55300496E37 /* PopOverMenuUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1B7495411F2BA433009177A5 /* Resources */ = {
+		1B77EE211F2FC55300496E37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B7495561F2BA433009177A5 /* LaunchScreen.storyboard in Resources */,
-				1B7495531F2BA433009177A5 /* Assets.xcassets in Resources */,
-				1B7495511F2BA433009177A5 /* Main.storyboard in Resources */,
+				1B77EE361F2FC55300496E37 /* LaunchScreen.storyboard in Resources */,
+				1B77EE331F2FC55300496E37 /* Assets.xcassets in Resources */,
+				1B77EE311F2FC55300496E37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B74955A1F2BA433009177A5 /* Resources */ = {
+		1B77EE3A1F2FC55300496E37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B7495651F2BA434009177A5 /* Resources */ = {
+		1B77EE451F2FC55300496E37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,60 +277,61 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1B74953F1F2BA433009177A5 /* Sources */ = {
+		1B77EE1F1F2FC55300496E37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B74954E1F2BA433009177A5 /* ViewController.m in Sources */,
-				1B74954B1F2BA433009177A5 /* AppDelegate.m in Sources */,
-				1B7495481F2BA433009177A5 /* main.m in Sources */,
+				1B77EE5C1F2FC71E00496E37 /* PopOverViewController.m in Sources */,
+				1B77EE2E1F2FC55300496E37 /* ViewController.m in Sources */,
+				1B77EE2B1F2FC55300496E37 /* AppDelegate.m in Sources */,
+				1B77EE281F2FC55300496E37 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B7495581F2BA433009177A5 /* Sources */ = {
+		1B77EE381F2FC55300496E37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B7495611F2BA433009177A5 /* PopOverMenuTests.m in Sources */,
+				1B77EE411F2FC55300496E37 /* PopOverMenuTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B7495631F2BA434009177A5 /* Sources */ = {
+		1B77EE431F2FC55300496E37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B74956C1F2BA434009177A5 /* PopOverMenuUITests.m in Sources */,
+				1B77EE4C1F2FC55300496E37 /* PopOverMenuUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1B74955E1F2BA433009177A5 /* PBXTargetDependency */ = {
+		1B77EE3E1F2FC55300496E37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B7495421F2BA433009177A5 /* PopOverMenu */;
-			targetProxy = 1B74955D1F2BA433009177A5 /* PBXContainerItemProxy */;
+			target = 1B77EE221F2FC55300496E37 /* PopOverMenu */;
+			targetProxy = 1B77EE3D1F2FC55300496E37 /* PBXContainerItemProxy */;
 		};
-		1B7495691F2BA434009177A5 /* PBXTargetDependency */ = {
+		1B77EE491F2FC55300496E37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B7495421F2BA433009177A5 /* PopOverMenu */;
-			targetProxy = 1B7495681F2BA434009177A5 /* PBXContainerItemProxy */;
+			target = 1B77EE221F2FC55300496E37 /* PopOverMenu */;
+			targetProxy = 1B77EE481F2FC55300496E37 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1B74954F1F2BA433009177A5 /* Main.storyboard */ = {
+		1B77EE2F1F2FC55300496E37 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B7495501F2BA433009177A5 /* Base */,
+				1B77EE301F2FC55300496E37 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		1B7495541F2BA433009177A5 /* LaunchScreen.storyboard */ = {
+		1B77EE341F2FC55300496E37 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B7495551F2BA433009177A5 /* Base */,
+				1B77EE351F2FC55300496E37 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -331,7 +339,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1B74956E1F2BA434009177A5 /* Debug */ = {
+		1B77EE4E1F2FC55300496E37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -380,7 +388,7 @@
 			};
 			name = Debug;
 		};
-		1B74956F1F2BA434009177A5 /* Release */ = {
+		1B77EE4F1F2FC55300496E37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -423,31 +431,35 @@
 			};
 			name = Release;
 		};
-		1B7495711F2BA434009177A5 /* Debug */ = {
+		1B77EE511F2FC55300496E37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9VUC3R8D65;
 				INFOPLIST_FILE = PopOverMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.PopOverMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
-		1B7495721F2BA434009177A5 /* Release */ = {
+		1B77EE521F2FC55300496E37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9VUC3R8D65;
 				INFOPLIST_FILE = PopOverMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.PopOverMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
-		1B7495741F2BA434009177A5 /* Debug */ = {
+		1B77EE541F2FC55300496E37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -459,7 +471,7 @@
 			};
 			name = Debug;
 		};
-		1B7495751F2BA434009177A5 /* Release */ = {
+		1B77EE551F2FC55300496E37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,7 +483,7 @@
 			};
 			name = Release;
 		};
-		1B7495771F2BA434009177A5 /* Debug */ = {
+		1B77EE571F2FC55300496E37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = PopOverMenuUITests/Info.plist;
@@ -482,7 +494,7 @@
 			};
 			name = Debug;
 		};
-		1B7495781F2BA434009177A5 /* Release */ = {
+		1B77EE581F2FC55300496E37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = PopOverMenuUITests/Info.plist;
@@ -496,40 +508,40 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B74953E1F2BA433009177A5 /* Build configuration list for PBXProject "PopOverMenu" */ = {
+		1B77EE1E1F2FC55300496E37 /* Build configuration list for PBXProject "PopOverMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1B74956E1F2BA434009177A5 /* Debug */,
-				1B74956F1F2BA434009177A5 /* Release */,
+				1B77EE4E1F2FC55300496E37 /* Debug */,
+				1B77EE4F1F2FC55300496E37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B7495701F2BA434009177A5 /* Build configuration list for PBXNativeTarget "PopOverMenu" */ = {
+		1B77EE501F2FC55300496E37 /* Build configuration list for PBXNativeTarget "PopOverMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1B7495711F2BA434009177A5 /* Debug */,
-				1B7495721F2BA434009177A5 /* Release */,
+				1B77EE511F2FC55300496E37 /* Debug */,
+				1B77EE521F2FC55300496E37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		1B7495731F2BA434009177A5 /* Build configuration list for PBXNativeTarget "PopOverMenuTests" */ = {
+		1B77EE531F2FC55300496E37 /* Build configuration list for PBXNativeTarget "PopOverMenuTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1B7495741F2BA434009177A5 /* Debug */,
-				1B7495751F2BA434009177A5 /* Release */,
+				1B77EE541F2FC55300496E37 /* Debug */,
+				1B77EE551F2FC55300496E37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		1B7495761F2BA434009177A5 /* Build configuration list for PBXNativeTarget "PopOverMenuUITests" */ = {
+		1B77EE561F2FC55300496E37 /* Build configuration list for PBXNativeTarget "PopOverMenuUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1B7495771F2BA434009177A5 /* Debug */,
-				1B7495781F2BA434009177A5 /* Release */,
+				1B77EE571F2FC55300496E37 /* Debug */,
+				1B77EE581F2FC55300496E37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1B74953B1F2BA433009177A5 /* Project object */;
+	rootObject = 1B77EE1B1F2FC55300496E37 /* Project object */;
 }

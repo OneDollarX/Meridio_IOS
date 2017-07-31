@@ -223,6 +223,8 @@
         NSLog(@"%@",bookDescription[row]);
         NSLog(@"trade id is %@",tradeId);
         
+        //pass user library selected book info to tradeBookDetailViewController
+        
         tradeBookDetailView.tradeBookTitle = title[row];
         tradeBookDetailView.tradeBookImageUrl = imageURL[row];
         tradeBookDetailView.tradeBookGenre = categories[row];

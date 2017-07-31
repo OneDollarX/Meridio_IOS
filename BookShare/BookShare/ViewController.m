@@ -33,8 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"main page constanttttttttttttttt is %@",USER_ID);
-
+    
+    
+    /**********************************tool bar***************************/
     self.btnLogOut.enabled = NO;
     self.btnLogOut.hidden = YES;
     self.btnRequestSent.enabled = NO;
@@ -102,6 +103,9 @@
     [self setToolbarItems:myButtonArray animated:NO];
     
     
+    /**********************************tool bar***************************/
+    
+    
     //location
     locationManager = [[CLLocationManager alloc] init];
     
@@ -114,21 +118,6 @@
     
     self.aroundMeButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.aroundMeButton.titleLabel.numberOfLines = 2;
-    
-    
-    
-//    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-//    content.contentURL = [NSURL
-//                          URLWithString:@"https://www.facebook.com/FacebookDevelopers"];
-//    FBSDKShareButton *shareButton = [[FBSDKShareButton alloc] init];
-//    shareButton.shareContent = content;
-//    shareButton.center = self.view.center;
-//    [self.view addSubview:shareButton];
-    
-
-
-    
-
 
     
 }
@@ -140,51 +129,7 @@
 }
 
 
-//- (IBAction)SettingClicked:(id)sender {
-//    
-//    
-//    
-//    
-//    /*********************************share test ***************************/
-//
-//    if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
-//        
-//        NSLog(@"test");
-//        FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-//
-//        //http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
-//
-//        content.contentURL = [NSURL URLWithString:@"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"];
-//        content.quote = @"Nurture your love for reading at no cost! Share your books using the Meridio App! I just did ;)";
-//    
-//        [FBSDKShareDialog showFromViewController:self
-//                                 withContent:content
-//                                    delegate:nil];
-//    }else{
-//        FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
-//        [loginManager logInWithPublishPermissions:@[@"publish_actions"]
-//                               fromViewController:self
-//                                          handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-//                                              //TODO: process error or result.
-//                                              FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-//                                              
-//                                              //http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
-//                                              
-//                                              content.contentURL = [NSURL URLWithString:@"http://books.google.com/books/content?id=uagODAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"];
-//                                              content.quote = @"Nurture your love for reading at no cost! Share your books using the Meridio App! I just did ;)";
-//                                              
-//                                              [FBSDKShareDialog showFromViewController:self
-//                                                                           withContent:content
-//                                                                              delegate:nil];
-//                                          }];
-//    }
-//
-//    
-//
-//    /*********************************share test ***************************/
-//    
-//    
-//}
+
 
 - (IBAction)logOut:(id)sender {
     FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];

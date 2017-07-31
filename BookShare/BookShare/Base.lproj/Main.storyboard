@@ -1144,17 +1144,17 @@
         <image name="bookImagePlaceHolder" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pc5-xx-kdb"/>
-        <segue reference="9EB-O9-Qyl"/>
-        <segue reference="RW4-Jf-C7f"/>
+        <segue reference="Ujy-ks-P2v"/>
+        <segue reference="ysZ-Jb-9Ab"/>
+        <segue reference="Ctc-Ru-Z3Z"/>
+        <segue reference="hGG-KG-OLR"/>
+        <segue reference="5CM-DN-zgf"/>
         <segue reference="y61-4T-V2B"/>
         <segue reference="XWz-dV-WGs"/>
         <segue reference="R6e-Iv-Dk7"/>
         <segue reference="ExU-p1-fqA"/>
-        <segue reference="hGG-KG-OLR"/>
-        <segue reference="Ctc-Ru-Z3Z"/>
-        <segue reference="YdC-ni-7Zy"/>
-        <segue reference="5CM-DN-zgf"/>
-        <segue reference="Ujy-ks-P2v"/>
+        <segue reference="9EB-O9-Qyl"/>
+        <segue reference="RW4-Jf-C7f"/>
+        <segue reference="Pc5-xx-kdb"/>
     </inferredMetricsTieBreakers>
 </document>

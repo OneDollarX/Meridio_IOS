@@ -4,7 +4,7 @@
 //
 //  Created by YILUN XU on 7/19/17.
 //  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
-//
+//yyyyyyyy
 
 #import "MyRequestsTableViewController.h"
 #import "MyRequestsTableViewCell.h"
@@ -25,6 +25,8 @@
     self.view.backgroundColor = [UIColor darkGrayColor];
     self.navigationItem.hidesBackButton = YES;
     fromUserId = @"1";
+    
+    /**************************************tool bar***************************************/
     
     
     UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
@@ -79,6 +81,8 @@
     [self.navigationItem.backBarButtonItem setTitle:@""];
     [self.navigationController setToolbarHidden:NO];
     [self setToolbarItems:myButtonArray animated:NO];
+    
+    /**************************************tool bar***************************************/
     
     
     

@@ -4,7 +4,7 @@
 //
 //  Created by YILUN XU on 7/25/17.
 //  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
-//
+//yyyyyyy
 
 #import "RequestsReceivedTableViewController.h"
 #import "RequestsReceivedTableViewCell.h"
@@ -31,6 +31,8 @@
     
     
     
+    
+    /*****************************************tool bar************************************/
     
     
     UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
@@ -87,6 +89,8 @@
     [self.navigationController setToolbarHidden:NO];
     [self setToolbarItems:myButtonArray animated:NO];
     
+    
+    /*****************************************tool bar ************************************/
     
     
     
@@ -333,6 +337,9 @@
         
         int row = (int) [myIndexPath row];
         NSLog(@"%@",usernameReceived[row]);
+        
+        
+        //pass requrestor userId tradeId and email to UserLibraryTableViewController
         
         userLibraryView.receivedUserId = usernameReceived[row];
         userLibraryView.receivedTradeId = tradeId[row];

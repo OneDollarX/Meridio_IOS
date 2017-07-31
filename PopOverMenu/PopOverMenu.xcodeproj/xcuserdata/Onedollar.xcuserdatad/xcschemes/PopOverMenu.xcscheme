@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B7495421F2BA433009177A5"
+               BlueprintIdentifier = "1B77EE221F2FC55300496E37"
                BuildableName = "PopOverMenu.app"
                BlueprintName = "PopOverMenu"
                ReferencedContainer = "container:PopOverMenu.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B74955B1F2BA433009177A5"
+               BlueprintIdentifier = "1B77EE3B1F2FC55300496E37"
                BuildableName = "PopOverMenuTests.xctest"
                BlueprintName = "PopOverMenuTests"
                ReferencedContainer = "container:PopOverMenu.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B7495661F2BA434009177A5"
+               BlueprintIdentifier = "1B77EE461F2FC55300496E37"
                BuildableName = "PopOverMenuUITests.xctest"
                BlueprintName = "PopOverMenuUITests"
                ReferencedContainer = "container:PopOverMenu.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1B7495421F2BA433009177A5"
+            BlueprintIdentifier = "1B77EE221F2FC55300496E37"
             BuildableName = "PopOverMenu.app"
             BlueprintName = "PopOverMenu"
             ReferencedContainer = "container:PopOverMenu.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1B7495421F2BA433009177A5"
+            BlueprintIdentifier = "1B77EE221F2FC55300496E37"
             BuildableName = "PopOverMenu.app"
             BlueprintName = "PopOverMenu"
             ReferencedContainer = "container:PopOverMenu.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1B7495421F2BA433009177A5"
+            BlueprintIdentifier = "1B77EE221F2FC55300496E37"
             BuildableName = "PopOverMenu.app"
             BlueprintName = "PopOverMenu"
             ReferencedContainer = "container:PopOverMenu.xcodeproj">

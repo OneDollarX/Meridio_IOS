@@ -11,18 +11,9 @@
 #import <Social/Social.h>
 
 @interface TradeBookDetailsViewController : UIViewController {
-    SLComposeViewController *slComposer;
+
 }
 
-
-
-@property (strong, nonatomic) NSString *tradeBookTitle;
-@property (strong, nonatomic) NSString *tradeBookGenre;
-@property (strong, nonatomic) NSString *tradeBookImageUrl;
-@property (strong, nonatomic) NSString *tradeBookDescription;
-@property (strong, nonatomic) NSString *tradeBookId;
-@property (strong, nonatomic) NSString *tradeId;
-@property (strong, nonatomic) NSString *tradeEmail;
 
 
 @property (strong, nonatomic) IBOutlet UIImageView *tradeBookImage;
@@ -33,5 +24,16 @@
 
 - (IBAction)acceptTradeReqeust:(id)sender;
 
+
+
+
+//pass from UserLibraryTableViewController.m
+@property (strong, nonatomic) NSString *tradeBookTitle;
+@property (strong, nonatomic) NSString *tradeBookGenre;
+@property (strong, nonatomic) NSString *tradeBookImageUrl;
+@property (strong, nonatomic) NSString *tradeBookDescription;
+@property (strong, nonatomic) NSString *tradeBookId;
+@property (strong, nonatomic) NSString *tradeId;
+@property (strong, nonatomic) NSString *tradeEmail;
 
 @end

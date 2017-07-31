@@ -14,13 +14,10 @@
     NSMutableArray *bookId;
     NSMutableArray *aroundMeUserId;
     NSMutableArray *aroundMeBookIsbn;
-    
-    
-    
 
 }
 
-
+//pass location from mainPage
 @property (strong, nonatomic) NSString *passingLat;
 @property (strong, nonatomic) NSString *passingLong;
 

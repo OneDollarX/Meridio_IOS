@@ -11,16 +11,20 @@
 @interface RequestBookDetailViewController : UIViewController {
     NSMutableArray *title;
 }
+
+
 @property (strong, nonatomic) IBOutlet UIImageView *requestBookImageView;
 @property (strong, nonatomic) IBOutlet UILabel *requestBookTitle;
 @property (strong, nonatomic) IBOutlet UILabel *requestBookCategories;
 @property (strong, nonatomic) IBOutlet UITextView *requestBookDescription;
+@property (strong, nonatomic) IBOutlet UIButton *requestBookBtn;
+
+- (IBAction)reqeustBook:(id)sender;
 
 
+//pass from BooksAroundMeViewController.m
 @property (strong, nonatomic) NSString *requestBookIsbn;
 @property (strong, nonatomic) NSString *requestBookId;
 
-- (IBAction)reqeustBook:(id)sender;
-@property (strong, nonatomic) IBOutlet UIButton *requestBookBtn;
 
 @end

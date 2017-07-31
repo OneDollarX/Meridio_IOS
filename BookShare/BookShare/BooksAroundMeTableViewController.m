@@ -4,13 +4,14 @@
 //
 //  Created by Dhruv Prakash on 26/07/17.
 //  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
-//
+//yyyyyy
 
 #import "BooksAroundMeTableViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "BooksAroundMeTableViewCell.h"
 #import "RequestBookDetailViewController.h"
 @interface BooksAroundMeTableViewController (){
+    
     NSString *currentLat;
     NSString *currentLong;
     NSString *userId;
@@ -22,15 +23,18 @@
 @implementation BooksAroundMeTableViewController
 
 - (void)viewDidLoad {
+    
     [self.navigationController setToolbarHidden:YES];
     userId = @"4";
     self.view.backgroundColor = [UIColor darkGrayColor];
     [self.navigationItem.backBarButtonItem setTitle:@""];
+    
     //currentLat = @"40.43140843";
     //currentLong = @"-79.92909952";
     
     currentLat = _passingLat;
     currentLong = _passingLong;
+    
     NSLog(@"passing long %@,passing lat %@",_passingLong,_passingLat);
 
     /**************************booksaroundme start***********************/
@@ -151,21 +155,12 @@
 
 
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BooksAroundMeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookAroundMeCell" forIndexPath:indexPath];
     
-
-    
-    
-    
-    
      // Configure the cell...
     cell.bookAroundMeId.hidden = YES;
-    
     cell.bookAroundMeTitle.text = title[indexPath.row];
-    //NSLog(@"%@",bookId[indexPath.row]);
     cell.bookAroundMeId.text = [NSString stringWithFormat:@"%@",bookId[indexPath.row]];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",imageURL[indexPath.row]]];
@@ -173,13 +168,6 @@
     UIImage *image = [UIImage imageWithData:data];
     cell.bookAroundMeImage.image = image;
     
-
-    
-    
-    
-   
-    
-
     return cell;
 }
 
@@ -233,7 +221,12 @@
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
         int row = (int) [myIndexPath row];
+        
+        
         selectedBookIsbn = aroundMeBookIsbn[row];
+        
+        //sent to requestBookDetailViewController
+        
         bookRequestDetailsView.requestBookIsbn = selectedBookIsbn;
         bookRequestDetailsView.requestBookId = [NSString stringWithFormat:@"%@",bookId[row]];
         

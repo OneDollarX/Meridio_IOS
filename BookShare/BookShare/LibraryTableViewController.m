@@ -4,7 +4,7 @@
 //
 //  Created by YILUN XU on 7/19/17.
 //  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
-//
+//yyyy
 
 #import "LibraryTableViewController.h"
 #import "LibraryTableViewCell.h"
@@ -28,6 +28,8 @@
 
 
     userId = @"1";
+    
+    /**************************tool bar***********************/
     
     
     UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
@@ -82,6 +84,7 @@
     [self.navigationItem.backBarButtonItem setTitle:@""];
     [self.navigationController setToolbarHidden:NO];
     [self setToolbarItems:myButtonArray animated:NO];
+    /**************************tool bar ***********************/
     
     /**************************getmybooks start***********************/
     
@@ -112,7 +115,7 @@
     NSData *postData = [NSJSONSerialization
                         dataWithJSONObject:dicData options:0 error:&error];
     [request setHTTPBody:postData];
-    NSLog(@"here");
+
     
     
     
@@ -150,16 +153,7 @@
 
                                             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
                                         });
-                                        NSLog(@"here !!!!!!!!!!!!!");
-                                        
-                                        
-                                        
-
-                                        
-                                        
-
-                                        
-                                        
+                            
                                     }else{
                                         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                                                        message:@"Something is wrong with the server. Plsese check!"
@@ -312,6 +306,9 @@
 - (IBAction)refresh:(id)sender {
     [self viewDidLoad];
 }
+
+
+
 -(void)deleteBook:(NSString *)deleteBookId{
     
     
@@ -368,14 +365,9 @@
                                         }
                                         if([[infoJson objectForKey:@"status"] isEqualToString:@"success"]){
                                             NSLog(@"delete successfully");
-                                            //TODO:UIAlertView
+
                                         }
 
-                                   
-                                        
-                                        
-                                        
-                                        
                                         
                                         
                                         
