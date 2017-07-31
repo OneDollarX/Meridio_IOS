@@ -565,7 +565,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BookShare",
-					"~/Documents/SDKs/FacebookSDKs-IOS-4",
+					"$(PROJECT_DIR)/FacebookSDKs-IOS-4",
 				);
 				INFOPLIST_FILE = BookShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -582,7 +582,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BookShare",
-					"~/Documents/SDKs/FacebookSDKs-IOS-4",
+					"$(PROJECT_DIR)/FacebookSDKs-IOS-4",
 				);
 				INFOPLIST_FILE = BookShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
