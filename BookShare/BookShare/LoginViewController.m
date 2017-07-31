@@ -10,7 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ViewController.h"
-#import "constant.h"
+
 
 @interface LoginViewController () {
     FBSDKAccessToken *accessToken;
@@ -168,8 +168,11 @@
                             NSString *sessionUserId = [json valueForKeyPath:@"userId"];
                             NSLog(@"session UserId = %@",sessionUserId);
                             userId = sessionUserId;
-                            NSString *const USER_ID = sessionUserId;
-                            NSLog(@"constantttttttttttt   %@",USER_ID);
+                            
+                            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                            [defaults setValue:sessionUserId forKey:@"USER_ID"];
+                            [defaults synchronize];
+
                             
                             NSLog(@"userid is  %@",sessionUserId);
                             NSLog(@"status is  %@",sessionStatus);

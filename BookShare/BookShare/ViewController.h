@@ -21,9 +21,8 @@
 @property (nonatomic) NSString *emailAddress;
 @property (nonatomic) NSString *userId;
 
-//setting
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *settingBtn;
-- (IBAction)SettingClicked:(id)sender;
+
+
 
 - (IBAction)logOut:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *btnLibrary;

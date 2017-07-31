@@ -14,7 +14,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "BooksAroundMeTableViewController.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
-#import "constant.h"
+
 
 @interface ViewController ()  <CLLocationManagerDelegate,FBSDKSharingDelegate>{
     
@@ -176,7 +176,7 @@
     if (currentLocation != nil) {
         Long = [NSString stringWithFormat:@"%.10f", currentLocation.coordinate.longitude];
         Lat = [NSString stringWithFormat:@"%.10f", currentLocation.coordinate.latitude];
-        NSLog(@"%@,%@",Long,Lat);
+        //NSLog(@"%@,%@",Long,Lat);
         
         
         

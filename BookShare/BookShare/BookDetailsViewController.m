@@ -42,7 +42,10 @@
     //location
     locationManager = [[CLLocationManager alloc] init];
     
-    userId = @"1";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    userId = [defaults valueForKey:@"USER_ID"];
+    
+    //userId = @"1";
     
     //TODO: get current location
     locationManager.delegate = self;

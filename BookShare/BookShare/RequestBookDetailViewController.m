@@ -24,7 +24,10 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    fromUserId = @"1";
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    fromUserId = [defaults valueForKey:@"USER_ID"];
+    //fromUserId = @"1";
     
     /*
      Check library books number before user can request,

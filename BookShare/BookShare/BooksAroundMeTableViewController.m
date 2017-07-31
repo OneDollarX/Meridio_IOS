@@ -25,7 +25,10 @@
 - (void)viewDidLoad {
     
     [self.navigationController setToolbarHidden:YES];
-    userId = @"4";
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    userId = [defaults valueForKey:@"USER_ID"];
+    //userId = @"1";
     self.view.backgroundColor = [UIColor darkGrayColor];
     [self.navigationItem.backBarButtonItem setTitle:@""];
     

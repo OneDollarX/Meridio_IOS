@@ -25,9 +25,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor darkGrayColor];
     self.navigationItem.hidesBackButton = YES;
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    toUserId = [defaults valueForKey:@"USER_ID"];
 
-    toUserId = @"1";
+    //toUserId = @"1";
     
     
     

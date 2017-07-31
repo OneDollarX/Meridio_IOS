@@ -24,7 +24,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor darkGrayColor];
     self.navigationItem.hidesBackButton = YES;
-    fromUserId = @"1";
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    fromUserId = [defaults valueForKey:@"USER_ID"];
+    //fromUserId = @"1";
     
     /**************************************tool bar***************************************/
     
