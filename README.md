@@ -3,7 +3,4 @@
 
 # ToDo:
 share userId among all the views <br />
-popover menu <br />
-setUserSession duplicate? <br />
-log out ? <br />
-sort <br />
+
