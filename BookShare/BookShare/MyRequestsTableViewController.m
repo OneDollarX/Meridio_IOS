@@ -76,7 +76,12 @@
     fixedItem.width = 15.0f;
     
     
-    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton5, fixedItem, barButton1, fixedItem, barButton2,fixedItem,barButton3,fixedItem,barButton4, nil];
+    UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    
+    
+    //NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton5, fixedItem, barButton1, fixedItem, barButton2,fixedItem,barButton3,fixedItem,barButton4, nil];
+    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton5, flexibleItem, barButton1, flexibleItem, barButton2,flexibleItem,barButton3,flexibleItem,barButton4, nil];
     
     
     

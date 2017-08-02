@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookShare/LibraryTableViewController.m"
-            timestampString = "523236268.432819"
+            timestampString = "523401154.823166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>

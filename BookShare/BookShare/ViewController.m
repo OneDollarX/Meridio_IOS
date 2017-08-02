@@ -36,14 +36,7 @@
     
     
     /**********************************tool bar***************************/
-    self.btnLogOut.enabled = NO;
-    self.btnLogOut.hidden = YES;
-    self.btnRequestSent.enabled = NO;
-    self.btnRequestSent.hidden = YES;
-    self.btnRequestReceived.enabled = NO;
-    self.btnRequestReceived.hidden = YES;
-    self.btnLibrary.enabled = NO;
-    self.btnLibrary.hidden = YES;
+
     self.navigationItem.hidesBackButton = YES;
     
     
@@ -91,8 +84,12 @@
     UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     fixedItem.width = 15.0f;
     
+    UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+
     
-    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton5, fixedItem, barButton1, fixedItem, barButton2,fixedItem,barButton3,fixedItem,barButton4, nil];
+    
+    //NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton5, fixedItem, barButton1, fixedItem, barButton2,fixedItem,barButton3,fixedItem,barButton4, nil];
+    NSArray *myButtonArray = [[NSArray alloc] initWithObjects:barButton5, flexibleItem, barButton1, flexibleItem, barButton2,flexibleItem,barButton3,flexibleItem,barButton4, nil];
     
 
 

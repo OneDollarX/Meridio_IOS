@@ -3,8 +3,9 @@
 //  BookShare
 //
 //  Created by YILUN XU on 7/19/17.
-//  Copyright © 2017 CarnegieMellonUniversity. All rights reserved.
-//
+//  https://github.com/vsubrahmanian/BarcodeScannerObjC
+//  https://ayeohyes.wordpress.com/2015/05/09/barcode-scanning-in-ios-using-avfoundation/
+
 
 #import "ScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
